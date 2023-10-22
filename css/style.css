@@ -394,7 +394,7 @@ a:hover, a:active, a:focus {
   left: -120px;
   bottom: -325px;
   padding: 12px;
-
+  
 }
 
 #about .team-thumb {
@@ -627,6 +627,17 @@ footer {
     margin-top: 32px;
   }
 
+
+  #about .about-img img {
+    border: 8px solid #7081b0;
+    position: absolute;
+    left: 50%; /* Mueve el centro de la imagen al centro del contenedor */
+    top: 60%; /* Mueve el centro de la imagen al centro del contenedor */
+    transform: translate(45%, -50%); /* Centra la imagen */
+    padding: 12px;
+    width: 200px; /* Ajusta el valor de acuerdo a tus necesidades */
+  }
+
 }
 
 
@@ -714,10 +725,17 @@ footer {
 
 /* Estilos para centrar el contenido <p> y agregar espaciado en los extremos */
 @media (max-width: 768px) {
-  .about-us-container {
+  .about-us-container .text{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 95%;
+    text-align: justify; /* Centra el texto horizontalmente */
+
+  }
+
+  h2{
+  text-align: center;
   }
 
   .image {
@@ -731,7 +749,7 @@ footer {
   }
 
   .text p {
-    margin: 0;
+    margin: 20px;
   }
 
 }

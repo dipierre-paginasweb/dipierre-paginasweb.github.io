@@ -1,125 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dipierre - Legal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="java.js"></script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<title>Guitar Detailing Col</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+  	<link rel="stylesheet" href="css/component.css">
+	
+    <link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/vegas.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Google web font  -->
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+	
 </head>
+<body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
-<body>
-    <header>
-        <div class="container">
-            <img src="Images/eclipse.png" alt="Imagen de Inicio">
-            <a href="/index.html">
-              <h1 class="logo">Inicio</h1>
-          </a>
-        </div>
-    </header>
 
-    <div class='parrafo'>
-        <h1><span class="color-acento"> ¡Comencemos! </span></h1> <h2>Estás a unos pasos de tu Página Web</h2>
-    </div>
+<!-- Preloader section -->
 
-    <div>
-        <form id="msform" method="post" action="" name="contact-form">
-            <!-- progressbar -->
-            <ul id="progressbar">
-              <li class="active">General</li>
-              <li>Diseño</li>
-              <li>Contacto</li>
-            </ul>
-            <!-- fieldsets -->
-            <fieldset>
-              <h2 class="fs-title">Información general</h2>
-              <h3 class="fs-subtitle">Cuéntanos sobre tu especialidad</h3>
+<div class="preloader">
+     <div class="sk-spinner sk-spinner-pulse"></div>
+</div>
 
-              <label for="pregunta">Cuál es el nombre de tu empresa?</label>
-              <input type="text" name="1" placeholder="Indica el nombre" />
-              <label for="pregunta">Tienes una especialización en tipos de instrumentos?</label>
-              <input type="text" name="2" placeholder="Ejemplo: Guitarras, Violines o Violonchelos" />
-              <label for="pregunta">Tienes licencias o acreditaciones que deban destacarse en tu sitio web?</label>
-              <input type="text" name="3" placeholder="Ejemplo: Si, contamos con acreditación" />
-              <label for="pregunta">Cuántos años llevas en el negocio de construir instrumentos?</label>
-              <input type="text" name="4" placeholder="Ejemplo: 3 años" />
-              <label for="pregunta">Cuáles son los días y horarios de operación?</label>
-              <input type="text" name="5" placeholder="Ejemplo: De lunes a sábado" />
-              <label for="pregunta">Realizas trabajos a domicilio?</label>
-              <input type="text" name="6" placeholder="Si – No: Indícanos el tipo de servicio" />
 
-              <input type="button" name="next" class="next action-button" value="Siguiente" />
-            </fieldset>
+<!-- Navigation section  -->
 
-            <fieldset>
-              <h2 class="fs-title">Tus servicios</h2>
-              <h3 class="fs-subtitle">como Luthier</h3>
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
-              <label for="pregunta">Cuáles dirías que son las mejores características de tu negocio?</label>
-              <input type="text" name="7" placeholder="Ejemplo: Responsables, puntuales, precios justos" />
-              <label for="pregunta">Describe los principales servicios que ofreces.</label>
-              <input type="text" name="8" placeholder="Ejemplo: Calibración, reparación, pintura Etc." />
-              <label for="pregunta">Vendes instrumentos que ya has construido?</label>
-              <input type="text" name="9" placeholder="Qué tipos de instrumentos tienes disponibles?" />
-              <label for="pregunta">Estás interesado en proporcionar lecciones o talleres relacionados a la luthería?</label>
-              <input type="text" name="10" placeholder="Tus clientes podrían estar interesados en aprender" />
-              <label for="pregunta">Quieres que tus tarifas sean visibles en tu página Web?</label>
-              <input type="text" name="11" placeholder="Ejemplo: Calibración $100.000" />
-              <label for="pregunta">Tienes servicios de evaluación de instrumentos para determinar su estado y valor?</label>
-              <input type="text" name="12" placeholder="Es una oferta común para instrumentos antiguos" />
-
-              <input type="button" name="Previous" class="previous action-button" value="Anterior" />
-              <input type="button" name="next" class="next action-button" value="Siguiente" />
-            </fieldset>
-
-            <fieldset>
-                <h2 class="fs-title">Información clave</h2>
-                <h3 class="fs-subtitle">Contenido y Secciones del Sitio Web</h3>
-
-                <label for="pregunta">Tienes alguna preferencia en colores para tu sitio web?</label>
-                <input type="text" name="13" placeholder="Indica los colores que te representan" />
-                <label for="pregunta">Cómo te gustaría que se llame tu sitio Web?</label>
-                <input type="text" name="14" placeholder="Ejemplo: www.masterluthier.com" />
-                <label for="pregunta">Tienes fotos o imágenes que quieras mostrar en el sitio?</label>
-                <input type="text" name="15" placeholder="Ejemplo: SI – No (te contactamos para el envío)" />
-                <label for="pregunta">Cuál es la experiencia que han tenido los usuarios con tus servicios?</label>
-                <input type="text" name="16" placeholder="Si-No; te contactaremos por mail" />
-
-                <input type="button" name="previous" class="previous action-button" value="Anterior" />
-                <input type="button" name="next" class="next action-button" value="Siguiente" />
-              </fieldset>
-
-            <fieldset>
-              <h2 class="fs-title">Información de Contacto</h2>
-              <h3 class="fs-subtitle">Indicanos tu correo, teléfono y redes sociales.</h3>
-              <label for="pregunta">Número de Teléfono</label>
-              <input type="text" name="17" placeholder="Ejemplo: +56 9 12345678" />
-              <label for="pregunta">Cuáles son tus Redes Sociales?</label>
-              <input type="text" name="18" placeholder="Instagram – Facebook – LinkedIn - Tiktok" />
-              <label for="pregunta">Correo Electrónico Corporativo</label>
-              <input type="text" name="19" placeholder="Si no tienes, ¿cómo te gustaría que se llame?" />
-              <label for="pregunta">Quieres indicar alguna dirección presencial de tu taller?</label>
-              <input type="text" name="20" placeholder="Dirección y ciudad" />
-              <label for="pregunta">Hay algún otro detalle que debamos conocer para crear tu página web?</label>
-              <input type="text" name="21" placeholder="Otros detalles importantes" />
-
-              <input type="button" name="previous" class="previous action-button" value="Anterior" />
-              <input id="submit" type="submit" class="submit action-button" target="_top " value="Enviar">
-            </fieldset>
-          </form>
-    </div>
-
-    <!-- ***** Footer Start ***** -->
-    <footer>
-      <div class="container">
-              <div class="col-lg-12">
-                  
-              </div>
-          </div>
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="#top" class="navbar-brand smoothScroll">Guitar Detailing Col</a>
       </div>
-  </footer>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#top" class="smoothScroll"><span>Inicio</span></a></li>
+            <li><a href="#about" class="smoothScroll"><span>Sobre MI</span></a></li>
+            <li><a href="#gallery" class="smoothScroll"><span>servicios</span></a></li>
+            <li><a href="#contact" class="smoothScroll"><span>Contacto</span></a></li>
+          </ul>
+       </div>
 
-    <script src="GoogleSheet.js"></script>
+    </div>
+  </div>
+
+
+<!-- Home section -->
+
+<section id="home">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Luthier Alejandro Delgado</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Descubre el arte detrás de cada nota. Bienvenido al mundo de la  <a rel="nofollow">lutería</a></p>
+        <a href="#contact" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">Contacto</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- About section -->
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+
+      <div class="about-us-container">
+        <div class="image">
+            <img src="images/ssslide-img2.jpg" alt="Imagen de about us">
+        </div>
+
+        <div class="text">
+            <h2>Sobre mi</h2>
+            <p>Con una sólida trayectoria de ocho años en el apasionante mundo de la construcción de instrumentos musicales, he tenido el privilegio de perfeccionar mi arte. Mi experiencia abarca un amplio espectro de servicios que van desde el mantenimiento general hasta la calibración, octavación, cambio de trastes, restauraciones meticulosas y mejoras en general. Lo que me define como luthier es mi dedicación inquebrantable a la artesanía musical, y esta pasión se refleja en cada instrumento que pasa por mis manos.</p>
+            <p>Me apasiona la música y me enorgullece desempeñar un papel en la creación y preservación de sus instrumentos musicales. Siempre estoy ansioso por embarcarme en nuevos proyectos y desafíos, y espero tener la oportunidad de colaborar con usted en su viaje musical.</p>
+        </div>
+      </div>
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="about-thumb">
+          <h1>D'ADDARIO CERTIFICATED</h1>
+          <p>Certificado por D'Addario Academia de Lutería, mi formación garantiza la excelencia en la creación y restauración de instrumentos musicales.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img" data-wow-delay="0.6s">
+        <img src="images/about-img.jpg" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title text-center">
+          <h1>Nuestros Servicios</h1>
+          <h3>Tenemos una amplia gama de servicios que se adaptan a tus necesidades</h3>
+        </div>
+      </div>
+
+      <!-- team carousel -->
+      <div id="team-carousel" class="owl-carousel">
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img1.png" class="img-responsive img-circle" alt="Mary"style="width: 200px; height: 200px;">
+          </div>
+          <h2 class="heading">Calibración</h2>
+          <p class="description">Aliquam ac justo est. Praesent feugiat cursus est.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img2.png" class="img-responsive img-circle" alt="Jack" style="width: 200px; height: 200px;">
+          </div>
+          <h2 class="heading">Octavación</h2>
+          <p class="description">Maecenas sed diam eget risus varius blandit sit non.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img3.png" class="img-responsive img-circle" alt="Linda" style="width: 200px; height: 200px;">
+          </div>
+          <h2 class="heading">Restauración</h2>
+          <p class="description">Phasellus nec ante in nunc molestie tincidunt ut eu diam.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img4.jpg" class="img-responsive img-circle" alt="Sandy">
+          </div>
+          <h2 class="heading">Cambio de trastes</h2>
+          <p class="description">Curabitur vulputate euismod neque et tincidunt.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img5.jpg" class="img-responsive img-circle" alt="Lukia">
+          </div>
+          <h2 class="heading">Pintura</h2>
+          <p class="description">Maecenas sed diam eget risus varius blandit sit.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img6.jpg" class="img-responsive img-circle" alt="George">
+          </div>
+          <h2 class="heading">Cambio de Pickups</h2>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img7.jpg" class="img-responsive img-circle" alt="Day">
+          </div>
+          <h2 class="heading">Upgrades</h2>
+          <p class="description">Maecenas sed diam eget risus varius blandit sit.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img8.jpg" class="img-responsive img-circle" alt="Lynn">
+          </div>
+          <h2 class="heading">Mantenimiento General</h2>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+        </div>
+      </div>
+
+      </div>
+      <!-- end team carousel -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Gallery section -->
+
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title">
+          <h1>Galeria</h1>
+          <p>Estos son algunos de nuestros servicios</p>
+        </div>
+      </div>
+
+      <ul class="grid cs-style-4">
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="/images/GALERIA/PULL.jpg" alt="image 1"></div>
+            <figcaption>
+              <h1>Pulido General</h1>
+              <small>Cum sociis natoque penatibus et magnis dis parturient montes.</small>
+
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="images/GALERIA/CLEAN.jpg" alt="image 2"></div>
+            <figcaption>
+              <h1>Cambio de trastes</h1>
+              <small>Suspendisse venenatis quam sed libero euismod feugiat.</small>
+
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="images/GALERIA/Calibrar.jpg" alt="image 3"></div>
+            <figcaption>
+              <h1>Octavación completa</h1>
+              <small>Aenean urna massa, convallis vehicula velit et, dictum pellentesque nisi.</small>
+
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="images/gallery-img4.jpg" alt="image 4"></div>
+            <figcaption>
+              <h1>Sed ornare</h1>
+              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+              <a href="#">Full Post</a>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer section -->
+
+<footer>
+	<div class="container">
+    
+    <div class="contactus">
+      <h1>Contactanos</h1>
+      <h3>cra 70 # 22 -75  Bogotá - Colombia</h3>
+      <h2>Lunes a Sabado de 9am a 5pm</h2>
+      <h3>contacto@guitardetailing.com</h3>
+      <h2>+57 310 3400 299</h2>
+      <h3>Encuentranos</h3>
+
+    </div>
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+            
+                <ul class="social-icon"> 
+                    <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="0.2s"></a></li>
+                    <li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="0.4s"></a></li>
+                    <li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="0.6s"></a></li>
+                    <li><a href="https://www.instagram.com/guitardetailingcol/" class="fa fa-instagram wow fadeInUp" data-wow-delay="0.8s"></a></li>
+                    <li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="1.0s"></a></li>
+                </ul>
+      
+			</div>
+			
+		</div>
+        
+	</div>
+</footer>
+
+<!-- Back top -->
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Javascript  -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vegas.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/toucheffects.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
 
 </body>
 </html>

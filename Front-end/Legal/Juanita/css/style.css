@@ -435,6 +435,10 @@ a:focus {
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1)
 }
 
+.contact_section .titulo {
+  margin-left: 60px;
+}
+
 .contact_section h2 {
   font-size: 26px;
   color: #64c27b;
@@ -443,6 +447,38 @@ a:focus {
   margin-left: 2.5%;
 }
 
+.geo {
+  padding: 100px 0;
+  display: flex;
+}
+
+.geo-1, .geo-2 {
+  width: 50%;
+}
+
+.geo-1 h2{
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #363636;
+}
+
+.geo-1 p {
+  font-size: 16px;
+  color: #64c27b;
+  margin-bottom: 15px;
+  margin-left: 80px;
+}
+
+.geo-1 .icon {
+  font-size: 18px;
+  color: #252525;
+
+}
+
+.map {
+  width: 600px;
+  height: 450px;
+}
 
 
 /* end contact section */

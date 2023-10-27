@@ -401,15 +401,57 @@ a:focus {
 .contact_section {
   background-color: #f8faf9;
 }
+
 .contact_section .col-md-6 {
   padding: 0;
 }
 
-.contact_section h2 {
-  font-size: 25px;
-  color: #ed9a57;
-  position: relative;
+.contact_section input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #252525;
+  width: 90%;
+  margin: 10px 0;
+}
 
+.contact_form-container {
+  padding: 45px;
+  padding-right: 0;
+}
+
+.contact_form-container button {
+  border: none;
+  background-color: #ed9a57;
+  color: #252525;
+  padding: 8px 40px;
+  border-radius: 20px;
+}
+
+.contact_img-box {
+  display: flex;
+  align-items: center;
+  padding: 45px;
+  padding-left: 0;
+  margin-top: -70px;
+}
+
+.contact_img-box img {
+  width: 97%;
+  border-radius: 20px;
+  border-color: #464646;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1)
+}
+
+.contact_section .titulo {
+  margin-left: 60px;
+}
+
+.contact_section h2 {
+  font-size: 26px;
+  color: #ed9a57;
+  font-weight: bold;
+  position: relative;
+  margin-left: 2.5%;
 }
 
 .geo {
@@ -431,6 +473,7 @@ a:focus {
   font-size: 16px;
   color: #ed9a57;
   margin-bottom: 15px;
+  margin-left: 80px;
 }
 
 .geo-1 .icon {
@@ -443,7 +486,6 @@ a:focus {
   width: 600px;
   height: 450px;
 }
-
 
 
 /* end contact section */

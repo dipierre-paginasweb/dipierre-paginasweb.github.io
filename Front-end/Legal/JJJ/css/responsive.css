@@ -17,7 +17,6 @@
 
     .practice_box:hover {
 
-        transform: translateY(-90px);
     }
 
     .practice_detail p {
@@ -68,8 +67,9 @@
     }
 
     .hero_section-container .hero_img-box {
-
+        order: 2;
         width: 90%;
+        padding: 0;
     }
 
     .hero_section-container .hero_detail-box {
@@ -91,6 +91,10 @@
         left: 52%;
     }
 
+    .about_img-box {
+        margin-top: 90px;
+    }
+
     .practice_box {
         margin: 75px 15px 0 15px;
         transition: all .3s;
@@ -98,7 +102,19 @@
 
     .practice_box:hover {
 
-        transform: translateY(-60px);
+    }
+
+    .contact_form-container button {
+        margin-left: -50px;
+    }
+
+    .contact_img-box {
+        margin-top: 30px;
+        margin-right: 60px;
+    }
+
+    .info_news img {
+        margin-top: 10px;
     }
 }
 

@@ -1,0 +1,141 @@
+@media (max-width: 1120px) {}
+
+@media (max-width: 991px) {
+    .custom_nav-container .nav_search-btn {
+        background-position: center;
+    }
+
+    .custom_nav-container .navbar-toggler .navbar-toggler-icon {
+        display: initial;
+    }
+
+    .navbar-collapse {
+        padding-bottom: 20px;
+    }
+
+    .practice_box {
+        margin: 100px 15px 0 15px;
+        padding-bottom: 20px;
+        transition: all .5s;
+    }
+
+    .practice_box:hover {
+
+        transform: translateY(-90px);
+    }
+
+    .practice_detail p {
+        margin-top: 25px;
+    }
+
+    .welcome_section::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .info_section .col-md-4 {
+        padding: 20px 30px;
+        text-align: center;
+    }
+
+    .info_news input {
+        width: 100%;
+    }
+
+    .hero_section-container {
+        width: 90%;
+    }
+
+    .hero_section-container .hero_detail-box {
+        padding-bottom: 20px;
+    }
+
+    .home_section{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .home_section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .call_to-btn {
+        margin-top: 20px;
+    }
+
+    .hero_section-container {
+        flex-direction: column;
+    }
+    .home_section .home_img-box {
+        width: 100%;
+        margin-left: -70px;
+        margin-bottom: 50px;
+    }
+
+    .hero_section-container .hero_img-box {
+        width: 100%;
+        margin-top: 20px;
+        padding-left: 40px;
+    }
+
+    .hero_section-container .hero_detail-box {
+        width: 90%;
+
+    }
+
+    .hero_section-container .hero_detail-box .hero_detail-container {
+        padding-left: 0;
+        padding-top: 35px;
+    }
+
+    .carousel-control-prev {
+        margin-left: 50px;
+    }
+    
+    .carousel-control-next {
+        margin-right: 50px;
+    }
+    
+
+    .practice_box {
+        margin: 75px 15px 0 15px;
+        transition: all .3s;
+    }
+
+    .practice_box:hover {
+
+        transform: translateY(-60px);
+    }
+
+    .contact_section {
+        padding: 0 30px 30px 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .geo-1 , .geo-2 {
+        width: 100%;
+    }
+    .map {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 400px) {}
+
+@media (max-width: 360px) {}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+
+}

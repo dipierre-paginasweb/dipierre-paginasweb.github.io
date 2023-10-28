@@ -27,6 +27,29 @@
     .welcome_section::before {
         display: none;
     }
+
+    .contact_section {
+        padding: 0 30px 30px 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact_section .titulo {
+        margin-left: 10px;
+    }
+
+    .contact_section .geo-1 p {
+        margin-left: 10px;
+    }
+
+    .geo-1 , .geo-2 {
+        width: 100%;
+    }
+    .map {
+        margin-top: 20px;
+        width: 300px;
+        height: 350px;
+    }
 }
 
 @media (max-width: 768px) {

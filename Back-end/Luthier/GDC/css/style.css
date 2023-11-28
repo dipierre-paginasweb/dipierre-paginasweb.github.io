@@ -945,7 +945,11 @@ text-align: center;
 .text::before {
   content: '';
   position: absolute;
-  background-image: url('/images/alejo-47.jpg');
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 30px;
+  background-image: url('/Back-end/Luthier/GDC/images/alejo-47.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.15; /* Ajusta la opacidad según sea necesario */
@@ -954,6 +958,7 @@ text-align: center;
 
 .text p {
   margin: 20px;
+  margin-left: 40px;
   color: #6b6a6a;
 }
 

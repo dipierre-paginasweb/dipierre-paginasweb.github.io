@@ -205,7 +205,7 @@
         margin-top: 0px !important;
     }
     .banner_main {
-        padding: 152px 0px 90px 0px;
+        padding: 212px 0px 90px 0px;
         background-color: #cacaca !important;
         background: inherit;
     }
@@ -213,14 +213,19 @@
         padding: 0 50px 0 0px;
     }
     .text-bg {
-        max-width: inherit;
-        margin-top: 0px;
+      width: fit-content;
+      margin-top: 10px;
     }
+
+    .ban_track img {
+        margin-left: 70px;
+    }
+    
     .transfot {
         padding-top: 30px;
     }
     .about {
-        margin-top: 90px;
+        margin-top: 200px;
     }
     .text-bg h1 {
         font-size: 36px;
@@ -232,6 +237,20 @@
     #banner1 a.carousel-control-next {
         top: 50%;
     }
+    
+    .titlepage {
+        text-align: center;
+    }
+
+    .about_right {
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+
+    #about .read_more {
+      margin-left: 32%;
+    }
+
     .titlepage h2 {
         font-size: 27px;
         line-height: 30px;
@@ -254,7 +273,8 @@
     }
     .blac_co {
         margin-top: 0px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+        margin-left: 130px
     }
     #veh .carousel-control-prev,
     #veh .carousel-control-next {
@@ -266,6 +286,16 @@
     #veh .carousel-control-next {
         right: 40%;
     }
+
+    .choose {
+        margin-top: -150px;
+        text-align: center;
+    }
+
+    .choose .read_more {
+        margin-left: 31%;
+    }
+
     .choose_box h3 {
         font-size: 16px;
     }
@@ -295,6 +325,10 @@
     }
     .d_none {
         display: none;
+    }
+
+    .footer {
+        margin-top: -170;
     }
 }
 

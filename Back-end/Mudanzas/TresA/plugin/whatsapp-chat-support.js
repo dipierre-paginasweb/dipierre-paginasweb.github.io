@@ -41,7 +41,7 @@
 
         popupFx                     :   '1', // The popup effect from 0 till 14
         now                         :   '', // When empty it will use the date and time from the user browser if not you can assign it with PHP maybe (which will be the date of the server) format: YYYY-MM-DD HH:mm:ss (2019-12-30 18:30:00) 
-        timezone                    :   'America/Santiago', // When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)
+        timezone                    :   'America/Lima', // When using the date and time from the user browser you can transform it to your current timezone (in case your user is in a different timezone)
         notAvailableMsg             :   'Estamos fuera de horario', // message when its not an available day or once the available hours have passed
         almostAvailableMsg          :   'Estaré disponible pronto', // if today is an available day and before the time starts
         dialogNotAvailableMsg       :   'Estamos fuera de horario', // message when its not an available day or once the available hours have passed

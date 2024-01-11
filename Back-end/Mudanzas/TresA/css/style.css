@@ -1,4 +1,4 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+/*--------------------------------------------------------------------- File Name: s tyle.css ---------------------------------------------------------------------*/
 
 
 /*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,700i,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,800i&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@900&family=Satisfy&display=swap');
+
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
  2) font-family: 'Poppins', sans-serif;
  ----------------------------------------*****/
@@ -29,9 +29,17 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
-/* Negro: #070101
-   Subtitulo: #353535 
-*/
+
+/* Color de la franja verde */
+.green-stripe {
+     background-color: rgb(58, 58, 63); /* Color de la franja verde */
+     height: 62.5%; /* Ajusta la altura de la franja según tus necesidades */
+     position: absolute;
+     top: 0; /* Ajusta la posición vertical de la franja */
+     width: 100%;
+}
+ 
+
 
 * {
      box-sizing: border-box !important;
@@ -77,7 +85,7 @@ h6 {
 }
 
 h1 {
-     font-size: 24px;
+     font-size: 44px !important; 
 }
 
 h2 {
@@ -298,12 +306,7 @@ button {
 /*--      end sidebar  navigation--*/
 
 .logo {
-     color: #0f98f8;
-     font-size: 25px;
-     line-height: 20px;
-     font-weight: bold;
-     text-transform: uppercase;
-     margin-top: 34px;
+     padding-top: 12px;
 }
 
 ul.conat_info li {
@@ -339,26 +342,31 @@ ul.conat_info li a:hover {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.png);
-     padding: 300px 0px 0px 0px;
+
+     padding: 200px 0px 0px 0px;
      background-size: auto 78%;
      background-repeat: no-repeat;
      min-height: 1150px;
      background-position: right top;
+     background-color: #f7f7f9;
+     margin-bottom: -450px;
 }
 
 .text-bg {
-     margin-top: 0px;
+     margin-top: 70px;
      text-align: left;
      float: right;
      max-width: 430px;
      width: 100%;
+     margin-right: 30px;
 }
 
+/** texto inicial **/
 .text-bg h1 {
-     color: #070101;
+     color: #ffffff;
      font-size: 60px;
      line-height: 70px;
+     padding-top: 20px;
      padding-bottom: 45px;
      font-weight: bold;
 }
@@ -370,25 +378,22 @@ ul.conat_info li a:hover {
      line-height: 30px;
      margin-bottom: 30px;
      display: block;
+     padding-top: 15px;
 }
 
 .ban_track {
      margin-top: 55px;
+     width: 80%;
 }
 
-.banner_slide {
-     padding: 0 80px;
-}
+
 
 .ban_track figure {
-     width: 190%;
-     margin-top: -185px;
-     margin-left: 100px;
+     margin: 0;
 }
 
-
 .transfot {
-     text-align: left;
+     text-align: center;
 }
 
 .transfot span {
@@ -405,24 +410,30 @@ ul.conat_info li a:hover {
 }
 
 .transfot_form {
-     padding: 0 15px;
+
+     border-radius: 20px;
+     padding: 0 20px;
      height: 40px;
-     margin-bottom: 15px;
-     border: #fff solid 1px;
+     margin-bottom: 25px;
+     border: #e0e4df solid 1px; /** borde de presupuestos **/
      font-size: 16px;
+     margin-left: -55px;
 }
 
+
 .get_now {
+
+     border-radius: 30px;
      max-width: 150px;
      width: 100%;
      padding: 6px 0;
-     background: #222b3c;
+     background: #2961db;
      color: #fff;
      font-size: 17px;
 }
 
 .get_now:hover {
-     background-color: #000;
+     background-color: #2233ce;
 }
 
 #banner1 .carousel-caption {
@@ -473,7 +484,7 @@ ul.conat_info li a:hover {
 
 .titlepage h2 {
      font-size: 50px;
-     color: #070101;
+     color: #0f98f8;
      line-height: 45px;
      font-weight: bold;
      padding: 0;
@@ -486,18 +497,29 @@ ul.conat_info li a:hover {
 }
 
 .read_more {
-     font-size: 20px;
+     font-size: 23px;
      background-color: transparent;
-     color: #0f98f8 !important;
+     color: #0f98f8 ;
      padding: 13px 0px;
      width: 100%;
+     max-width: 198px;
      font-weight: 500;
      position: relative;
      display: block;
      line-height: 1px;
 }
 
+.read_more:hover {
+     color: #25D366;
+}
+
+
 /** about section **/
+
+.about_right{
+     margin-right: 60px;
+}
+
 
 .about {
      background-color: #ffffff;
@@ -512,15 +534,15 @@ ul.conat_info li a:hover {
      width: 100%;
 }
 
-
 .about .titlepage p {
      padding: 30px 0px;
-     color: #2a2a2c;
+     color: #353535;
      font-size: 17px;
      line-height: 32px;
      font-weight: 400;
      display: inline-block;
 }
+
 
 /** end about section **/
 
@@ -539,7 +561,7 @@ ul.conat_info li a:hover {
 }
 
 .service .titlepage p {
-     color: #0c0202;
+     color: #353535;
      font-size: 17px;
      line-height: 30px;
      padding-top: 20px;
@@ -548,8 +570,8 @@ ul.conat_info li a:hover {
 .service_main {
      display: flex;
      flex-wrap: wrap;
-     margin-left: 200px;
-     margin-right: -120px;
+     justify-content: center;
+     align-items: center;
 }
 
 .service_box {
@@ -583,11 +605,11 @@ ul.conat_info li a:hover {
 }
 
 .blu_colo i {
-     background-color: #0f98f8
+     background-color: rgb(58, 58, 63);
 }
 
 .yell_colo i {
-     background-color: #0f98f8
+     background-color: rgb(21, 21, 22);
 }
 
 .yelldark_colo {
@@ -595,11 +617,11 @@ ul.conat_info li a:hover {
 }
 
 .yelldark_colo i {
-     background-color: #0f98f8
+     background-color: rgb(113, 113, 118)
 }
 
 .service .read_more {
-     text-align: center;
+     margin: 0 auto;
      padding-top: 70px;
 }
 
@@ -620,7 +642,7 @@ ul.conat_info li a:hover {
 }
 
 .vehicles .titlepage p {
-     color: #0d0202;
+     color: #353535;
      padding-top: 15px;
      text-align: center;
      margin: 0 50px;
@@ -647,12 +669,14 @@ ul.conat_info li a:hover {
 }
 
 .blac_co {
-     color: #000;
+     color: rgb(58, 58, 63);
      font-size: 25px;
      line-height: 20px;
      font-weight: bold;
      text-transform: uppercase;
-     margin-top: 34px;
+     margin-top: 44px;
+     padding-top: 10px ;
+     margin-left: 36.5%;
 }
 
 .vehicles .read_more {
@@ -826,7 +850,7 @@ ul.conat_info li a:hover {
 
 .choose {
      background-color: #fff;
-     padding-top: 90px;
+     padding-top: 70px;
 }
 
 .choose .titlepage {
@@ -849,10 +873,14 @@ ul.conat_info li a:hover {
 
 .choose_box p {
      display: inline-block;
-     color: #202121;
+     color: #353535;
      font-size: 17px;
      line-height: 30px;
      padding: 10px 0 70px 0;
+}
+
+.choose_box img {
+     width: 50%;
 }
 
 
@@ -974,7 +1002,7 @@ ul.location_icon li {
 
 ul.location_icon li a {
      font-size: 40px;
-     color: #0f98f8;
+     color: rgb(58, 58, 63);
      line-height: 40px;
      padding-right: 16px;
      float: left;
@@ -993,7 +1021,7 @@ ul.location_icon li a:hover {
 }
 
 .map figure img {
-     width: 50%;
+     width: 45%;
 }
 
 .bottom_form {
@@ -1042,14 +1070,14 @@ ul.location_icon li a:hover {
 }
 
 .copyright {
-     background-color: #0f98f8;
+     background-color: rgb(58, 58, 63);
      margin-top: 70px;
      padding: 20px 0;
 }
 
 .copyright p {
      color: #fff;
-     font-size: 18px;
+     font-size: 15px;
      line-height: 22px;
      text-align: center;
      padding-top: 0px;
@@ -1058,7 +1086,7 @@ ul.location_icon li a:hover {
 }
 
 .copyright a {
-     color: #fff;
+     color: #61CE96;
 }
 
 .copyright a:hover {

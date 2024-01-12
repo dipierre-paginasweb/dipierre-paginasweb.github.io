@@ -214,11 +214,11 @@
     }
     .text-bg {
       width: fit-content;
-      margin-top: 70px;
+      margin-top: -30px;
     }
 
     .ban_track img {
-        margin-left: 70px;
+        margin-left: 40px;
     }
     
     .transfot {
@@ -285,8 +285,8 @@
     }
 
     .choose {
-        margin-top: -150px;
-        text-align: center;
+        margin-top: -120px;
+        text-align: left;
     }
 
     .choose .read_more {

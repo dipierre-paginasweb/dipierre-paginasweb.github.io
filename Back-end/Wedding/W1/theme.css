@@ -82,6 +82,24 @@ html, body{
     width: 100%
 }
 
+input{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#submit{
+	border: none;
+	background-color: #333333;
+	color: white;
+	width: 200px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+#submit:hover{
+	background-color: #222;
+}
+
 @media only screen and (max-width: 600px) {
     .heading {
         font-size: 4em;

@@ -25,6 +25,7 @@ html, body{
     font-size: 6em;
     font-weight: normal;
     text-shadow: 0 0 10px #000;
+    margin-top: -5px;
 }
 .heading-subtext{
     color: #fff;
@@ -65,7 +66,7 @@ html, body{
 .sub-heading{
     font-family: 'Caveat', cursive;
     font-size: 3em;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 .details{
     margin: 0 auto 8em;
@@ -82,10 +83,18 @@ html, body{
     width: 100%
 }
 
-input{
+.section form {
+    text-align:left;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+input {
 	width: 100%;
-	padding: 10px;
+	padding: 5px;
 	margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #submit{
@@ -95,6 +104,7 @@ input{
 	width: 200px;
 	margin-top: 10px;
 	border-radius: 5px;
+    margin-left: 20%;
 }
 #submit:hover{
 	background-color: #222;

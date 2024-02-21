@@ -115,3 +115,60 @@
     
 })(jQuery);
 
+document.getElementById('add-to-calendar-f').addEventListener('click', function() {
+    // Cambia los detalles del evento según tu necesidad
+    var event = {
+        title: 'Matrimonio Juan & MAría',
+        location: 'Expo Borderío, Av. Costanera Sur 6420, Vitacura.',
+        description: 'DJ Jazzy Nupitals guitar acoustic bass embarrassing first aisle guitar acoustic bass cheers glitter . Macarena fish aisle aisle wedding, forever happy salad  drunk groomsman overpriced florist embarrassing coworkers tuxedo aisle guitar acoustic bass champagne bouquet. Ring wedding beautiful tuxedo fish toast, veil Bryna aisle centerpieces. Cheers embarrassing bouquet bouquet Bryna overpriced florist DJ Jazzy Nupitals Bryna macarena. DJ Jazzy Nupitals prime rib centerpieces centerpieces cake dessert, cake dessert tuxedo aisle seat covers aisle.Church Will chicken unity sparkles Bryna cake dessert, centerpieces aisle Will debt guitar acoustic bass glitter . Magic sparkles father bridesmaid  champagne bouquet wedding mother. Magic first dancing fish chicken champagne debt mother guitar acoustic bass.',
+        start: new Date('2024-03-10T20:00:00'), // Cambia la fecha y hora de inicio
+        end: new Date('2024-03-10T04:00:00') // Cambia la fecha y hora de fin
+    };
+
+    var calendarEvent = 'BEGIN:VCALENDAR\n' +
+        'VERSION:2.0\n' +
+        'BEGIN:VEVENT\n' +
+        'SUMMARY:' + event.title + '\n' +
+        'LOCATION:' + event.location + '\n' +
+        'DESCRIPTION:' + event.description + '\n' +
+        'DTSTART:' + event.start.toISOString().replace(/-|:|\.\d+/g, '') + '\n' +
+        'DTEND:' + event.end.toISOString().replace(/-|:|\.\d+/g, '') + '\n' +
+        'END:VEVENT\n' +
+        'END:VCALENDAR';
+
+    // Crear un enlace y simular un clic para descargar el archivo .ics
+    var blob = new Blob([calendarEvent], { type: 'text/calendar' });
+    var link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'evento.ics';
+    link.click();
+});
+
+document.getElementById('add-to-calendar-m').addEventListener('click', function() {
+    // Cambia los detalles del evento según tu necesidad
+    var event = {
+        title: 'Matrimonio Juan & MAría',
+        location:'Catedral de Santiago, Plaza de Armas 498, Santiago.',
+        description: 'DJ Jazzy Nupitals guitar acoustic bass embarrassing first aisle guitar acoustic bass cheers glitter . Macarena fish aisle aisle wedding, forever happy salad  drunk groomsman overpriced florist embarrassing coworkers tuxedo aisle guitar acoustic bass champagne bouquet. Ring wedding beautiful tuxedo fish toast, veil Bryna aisle centerpieces. Cheers embarrassing bouquet bouquet Bryna overpriced florist DJ Jazzy Nupitals Bryna macarena. DJ Jazzy Nupitals prime rib centerpieces centerpieces cake dessert, cake dessert tuxedo aisle seat covers aisle.Church Will chicken unity sparkles Bryna cake dessert, centerpieces aisle Will debt guitar acoustic bass glitter . Magic sparkles father bridesmaid  champagne bouquet wedding mother. Magic first dancing fish chicken champagne debt mother guitar acoustic bass.',
+        start: new Date('2024-03-10T18:00:00'), // Cambia la fecha y hora de inicio
+        end: new Date('2024-03-10T19:30:00') // Cambia la fecha y hora de fin
+    };
+
+    var calendarEvent = 'BEGIN:VCALENDAR\n' +
+        'VERSION:2.0\n' +
+        'BEGIN:VEVENT\n' +
+        'SUMMARY:' + event.title + '\n' +
+        'LOCATION:' + event.location + '\n' +
+        'DESCRIPTION:' + event.description + '\n' +
+        'DTSTART:' + event.start.toISOString().replace(/-|:|\.\d+/g, '') + '\n' +
+        'DTEND:' + event.end.toISOString().replace(/-|:|\.\d+/g, '') + '\n' +
+        'END:VEVENT\n' +
+        'END:VCALENDAR';
+
+    // Crear un enlace y simular un clic para descargar el archivo .ics
+    var blob = new Blob([calendarEvent], { type: 'text/calendar' });
+    var link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'evento.ics';
+    link.click();
+});

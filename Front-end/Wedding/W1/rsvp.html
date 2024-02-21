@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Matrimonio de Pablo & Sofía</title>
+    <link rel="stylesheet" type="text/css" href="theme.css"> 
+    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="heading">
+        Pablo & Sofía
+        <span class="heading-subtext"> Se Casan!</span>
+      </h1>
+    </header>
+    
+    <section class="section">
+      <h2 class="sub-heading">Formulario de RSVP</h2>
+      <p>Nos encantaría contar con tu presencia en el día 
+        <br>más importante de nuestras vidas.
+      </p>
+    </section>
+    <section class="section">
+        <i class="fas fa-calendar-check"></i>
+        <div class="details">
+          
+          <form method="post" action="" name="contact-form">
+			      <label for="pregunta">Nombre de los invitados</label>
+			      <input type="text" name="Nombre" placeholder="Tu nombre">
+            <label for="pregunta">¿Asistirás?</label>
+			      <input type="text" name="Asistencia" placeholder="Si/No">
+            <label for="pregunta">¿Cántas personas forman tu grupo?</label>
+			      <input type="text" name="Invitados" placeholder="2 personas">
+            <label for="pregunta">¿Tienen alguna alergia/preferencia alimentaria?</label>
+			      <input type="text" name="Comida" placeholder="Vegetariano/Alergia al marisco">
+            <label for="pregunta">Dentro de los invitados, ¿se cuentan niños?</label>
+            <input type="text" name="Niños" placeholder="1 niño, 3 años">
+            <label for="pregunta">¿A qué eventos nos acompañarás?</label>
+            <input type="text" name="Fiesta" placeholder="Solo fiesta/Solo ceremonia/Ambos">
+
+			<input type="submit" value="Submit" id="submit">
+          </form>
+
+        </div>
+        
+    </section>
+
+    <script src="js/GoogleSheet.js"></script>
+
+    <script src="./js/smooth-scroll.polyfills.min.js"></script>
+    <script defer>
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var rsvpButton = document.getElementById('rsvpButton')
+      rsvpButton.addEventListener('click',hideButton,false);
+
+      function hideButton() {
+        rsvpButton.style.display = 'none';
+      }   
+    </script>
+
+    
+
+  </body>
+</html>

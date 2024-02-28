@@ -1,16 +1,11 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxwsoUtsYUKYBCofsbflP8Z4JN_N3zt9IPksJx5nEZp_hVjFXxdeGfsoeYdORfxXmj2VQ/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx95FEYh4ddbxd58HvBWPtV5Z-p7zon-yAMK3BlkrYa3mQUyIAFW14qoAz7Sy_mibIL/exec'
 
 const form = document.forms['contact-form']
 
 form.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => {
-    if (response.ok) {
-      window.location.href = 'https://dipierre-paginasweb.github.io/Back-end/Wedding/W1/Succesfull#success.html'; // Cambia 'tu_pagina_de_destino.html' por la URL de la página a la que deseas redirigir.
-    } else {
-      alert("Hubo un error al enviar el formulario.");
-    }
-  })
-  .catch(error => console.error('¡Error!', error.message))
- })
+  .then(response => alert("Muchas gracias por tu respuesta!" ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})

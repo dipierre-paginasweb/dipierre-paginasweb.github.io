@@ -49,7 +49,7 @@
             <div class="navbar-nav mr-auto py-0">
                 <a href="#family" class="nav-item nav-link">Familia</a>
                 <a href="#event" class="nav-item nav-link">Evento</a>
-                <a href="#rsvp" class="nav-item nav-link">RSVP</a>
+                <a href="rsvp.html" class="nav-item nav-link">RSVP</a>
                 <a href="#contact" class="nav-item nav-link">Contacto</a>
             </div>
         </div>
@@ -339,11 +339,10 @@
                     <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
                         <img class="img-fluid mb-4" src="img/event-1.jpg" alt="">
                         <h4 class="mb-3">Misa</h4>
-                        <p><a rel="noopener" href="https://maps.app.goo.gl/m4EpS5cShqyUuSHt9">Catedral de Santiago</a>
-                        </p>
+                        <p><a rel="noopener" href="https://maps.app.goo.gl/m4EpS5cShqyUuSHt9">Catedral de Santiago</a></p>
                         <p class="mb-2">Plaza de Armas 498, Santiago</p>
                         <p class="mb-0">18:00 - 19:30</p>
-                        <a href="#" id="add-to-calendar-m">Agregar al calendario</a>
+                        <a href="#" id="add-to-calendar-m" onclick="generateICS('Misa', 'Catedral de Santiago', 'Plaza de Armas 498, Santiago', '2024-03-10T18:00:00', '2024-03-10T19:30:00')">Agregar al calendario</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -353,7 +352,7 @@
                         <p><a rel="noopener" href="https://maps.app.goo.gl/A7H2hKT1AgvPKehEA">Expo Borderío</a></p>
                         <p class="mb-2">Av. Costanera Sur 6420, Vitacura</p>
                         <p class="mb-0">20:30 - 04:00</p>
-                        <a href="#" id="add-to-calendar-f">Agregar al calendario</a>
+                        <a href="#" id="add-to-calendar-f" onclick="generateICS('Fiesta', 'Expo Borderío', 'Av. Costanera Sur 6420, Vitacura', '2024-03-10T20:30:00', '2024-03-11T04:00:00')">Agregar al calendario</a>
                     </div>
                 </div>
             </div>
@@ -367,43 +366,8 @@
         <div class="container py-5">
             <div class="section-title position-relative text-center">
                 <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">RSVP</h6>
-                <h1 class="font-secondary display-4">Celebra con nosotros</h1>
+                <a class="link" href="rsvp.html"><h1 class="font-secondary display-4">Celebra con nosotros</h1></a>
                 <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        <form method="post" action="" name="contact-form">
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="Nombre" />
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="¿Asistirás?" />
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="Número de invitados" />
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="Asistes a fiesta/misa/ambos" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5"
-                                    placeholder="Mensaje para los novios" required="required"></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -443,7 +407,38 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
-            class="fa fa-angle-double-up"></i></a>
+            class="fa fa-angle-double-up"></i>
+    </a>
+
+    <script>
+        function generateICS(title, location, address, start, end) {
+            var event = {
+                title: title,
+                location: location + ', ' + address,
+                description: 'Detalles del evento...',
+                start: new Date(start),
+                end: new Date(end)
+            };
+
+            var calendarEvent = 'BEGIN:VCALENDAR\n' +
+                'VERSION:2.0\n' +
+                'BEGIN:VEVENT\n' +
+                'SUMMARY:' + event.title + '\n' +
+                'LOCATION:' + event.location + '\n' +
+                'DESCRIPTION:' + event.description + '\n' +
+                'DTSTART:' + event.start.toISOString().replace(/-|:|\.\d+/g, '').replace(/(\d{2})(\d{2})$/, '$1:$2') + '\n' +
+                'DTEND:' + event.end.toISOString().replace(/-|:|\.\d+/g, '').replace(/(\d{2})(\d{2})$/, '$1:$2') + '\n' +
+                'END:VEVENT\n' +
+                'END:VCALENDAR';
+
+            var blob = new Blob([calendarEvent], { type: 'text/calendar' });
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'evento.ics';
+            link.click();
+        }
+    </script>
+
 
 
     <!-- JavaScript Libraries -->

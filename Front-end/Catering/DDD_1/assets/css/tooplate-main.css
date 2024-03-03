@@ -163,7 +163,7 @@ body {
 nav {
 	top: 15%;
   text-align: center;
-  background: rgba(0, 0, 0, 0.75);
+  background: #C4B0D5;
   position: fixed;
   z-index: 100;
   height: 90%;
@@ -220,7 +220,7 @@ nav a {
 	transition: all .5s;
 }
 nav a.active {
-  background-color: rgba(0,0,0,0.8);
+  background-color: #8D6EAF;
 }
 nav a::before {
   content: "";
@@ -240,19 +240,12 @@ nav a::before {
   position: fixed;
  	display: inline-block;
   text-align: center;
-	background-color: #faf5b2;
+	background-color: #fff;
 	height: 15%;
 	width: 15%;
 }
-.logo h1 {
-  font-size: 24px;
-  text-transform: uppercase;
-  font-weight: 900;
-  color: #111;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+.logo img {
+  width: 48%;
 }
 .logo h2 {
   display: none;
@@ -300,15 +293,15 @@ nav a::before {
 
 }
 .slides .slide:nth-child(2) {
-  background-image: url(../images/about-bg.jpg);
+  background-image: url(../images/rerocada.jpg);
   background-position: fixed;
 }
 .slides .slide:nth-child(3) {
-  background-image: url(../images/gallery-bg.jpg);
+  background-image: url(../images/IMG_3915.JPG);
   background-position: fixed;
 }
 .slides .slide:nth-child(4) {
-  background-image: url(../images/contact-bg.jpg);
+  background-image: url(../images/IMG_3944.JPG);
   background-position: fixed;
 }
 
@@ -348,13 +341,13 @@ nav a::before {
   overflow: hidden;
 }
 #image-slider ul li:nth-child(1) {
-  background-image: url(../images/full-bg-01.jpg);
+  background-image: url(../images/IMG_3917.JPG);
 }
 #image-slider ul li:nth-child(2) {
-  background-image: url(../images/full-bg-02.jpg);
+  background-image: url(../images/wtsp1.jpeg);
 }
 #image-slider ul li:nth-child(3) {
-  background-image: url(../images/full-bg-03.jpg);
+  background-image: url(../images/wtsp2.jpeg);
 }
 #image-slider ul li.active-img{
   left: 0;
@@ -379,7 +372,7 @@ nav a::before {
   transition: all 0.5s;
 }
 #thumbnail ul li.active {
-  border: 5px solid #faf5b2;
+  border: 5px solid #C4B0D5;
 }
 #thumbnail ul li img {
   max-width: 100%;
@@ -397,14 +390,18 @@ nav a::before {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 700;
-  color: #fff;
+  color:#F9B333;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #EF801B;
 }
 .slide-caption h2 {
   margin-top: 0px;
   font-size: 60px;
   text-transform: uppercase;
   font-weight: 900;
-  color: #fff;
+  color: #F9B333;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #EF801B;
 }
 
 
@@ -454,23 +451,23 @@ nav a::before {
   border-radius: 50%;
 }
 #tabs ul .ui-tabs-active span {
-  background: #faf5b2;
-  border: #faf5b2;
+  background: #F9B333;
+  border: #F9B333;
   line-height: 90px;
   border-bottom: none;
 }
 #tabs ul .ui-tabs-active a {
-  color: #000;
+  color: #8D6EAF;
 }
 #tabs ul .ui-tabs-active span {
-  color: #1e1e1e;
+  color: #8D6EAF;
 }
 .tabs-content {
   margin-left: 60px;
   width: 585px;
   text-align: left;
   display: inline-block;
-  background: #fff;
+  background: #ffffffde;
   margin-right: 30px;
   padding: 60px;
 }
@@ -478,12 +475,12 @@ nav a::before {
   font-size: 29px;
   text-transform: uppercase;
   font-weight: 900;
-  color: #1e1e1e;
+  color: #8D6EAF;
   margin-top: 0px;
 }
 .tabs-content span {
   font-size: 15px;
-  color: #7a7a7a;
+  color: #EF801B;
   text-transform: uppercase;
 }
 .tabs-content p {
@@ -512,7 +509,7 @@ nav a::before {
 }
 .featured-item .down-content {
   background-color: #fff;
-  border: 5px solid #faf5b2;
+  border: 5px solid #F9B333;
   padding: 15px;
 }
 .featured-item h4 {
@@ -538,7 +535,7 @@ nav a::before {
   display: inline-block;
 }
 .owl-dots .active span {
-  background-color: #faf5b2!important;
+  background-color: #F9B333!important;
 }
 .owl-dots .owl-dot span {
   background-color: #fff;
@@ -564,33 +561,33 @@ nav a::before {
   max-width: 750px;
   margin-bottom: 100px;
   padding: 40px;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(255, 253, 253, 0.532);
 }
 #contact h2 {
   font-size: 29px;
   text-transform: uppercase;
   font-weight: 900;
-  color: #fff;
+  color: #8D6EAF;
   margin-top: 0px;
   margin-bottom: 50px;
 }
 #contact input,
 #contact textarea {
   padding-left: 15px;
-  background-color: rgba(0,0,0,0.1);
-  border: 1px solid #fff;
+  background-color: #f6bc52b6;
+  border: 1px solid #8D6EAF;
   border-radius: 0px;
   height: 40px;
   font-size: 14px;
-  color: #fff;
+  color: #1e1e1e;
   margin-bottom: 30px;
 }
 #contact input:focus,
 #contact textarea:focus {
-  color: #fff;
+  color: #1e1e1e;
   outline: none;
   box-shadow: none;
-  border: 1px solid rgba(250,245,178,1);
+  border: 1px solid #F9B333;
   background-color: rgba(0,0,0,0.1);
 }
 #contact textarea {
@@ -598,10 +595,10 @@ nav a::before {
   padding: 15px;
 }
 #contact button {
-  border: 2px solid #fff;
+  border: 2px solid #8D6EAF;
   font-size: 15px;
   text-transform: uppercase;
-  color: #fff;
+  color: #8D6EAF;
   font-weight: 700;
   background-color: transparent;
   height: 44px;
@@ -613,9 +610,9 @@ nav a::before {
   outline: none;
 }
 #contact button:hover {
-  background-color: #faf5b2;
-  border-color: #faf5b2;
-  color: #1e1e1e;
+  background-color: #8D6EAF;
+  border-color: #8D6EAF;
+  color: #C4B0D5;
 }
 
 

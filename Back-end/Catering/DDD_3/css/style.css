@@ -534,3 +534,41 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	margin-bottom: 20px;
 }
 }
+
+@media only screen and (max-width: 414px) {
+    body {
+        font-size: 15px; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    h2 {
+        font-size: 24px; /* Ajusta el tamaño de fuente de los títulos */
+    }
+
+    /* Ajusta estilos para otros elementos según sea necesario */
+
+    #menu {
+        padding: 10px; /* Ajusta el espaciado del menú */
+    }
+
+    #menu a.navbar-brand {
+        font-size: 16px; /* Ajusta el tamaño de fuente del logotipo en el menú */
+    }
+
+    #menu.navbar-default .navbar-nav > li > a {
+        font-size: 12px; /* Ajusta el tamaño de fuente de los elementos del menú */
+    }
+
+	.intro {
+		padding: 0;
+		font-size: 100%;
+	}
+
+    .intro h1 {
+        font-size: 50px; /* Ajusta el tamaño de fuente del encabezado en la sección de introducción */
+    }
+
+	#portfolio .categories ul.cat li ol.type {
+        display: none; /* Oculta el ol en pantallas pequeñas */
+    }
+	
+}

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
     <title>Dulce Despertar Cóctel</title>
-    <link rel="icon" href="assets/images/logosinfondo-01.png">
+    <link rel="icon" href="assets/images/logocolor-01.png">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/tooplate-main.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="plugin/whatsapp-chat-support.css">
 
   </head>
 <!--
@@ -200,12 +201,13 @@ https://www.tooplate.com/view/2113-earth
         <div class="slide" id="4">
             <div class="content fourth-content">
                 <div class="container-fluid">
-                    <form id="contact" action="assets/php/procesar_formulario.php" method="post">
+                    <form id="contact" action="https://formsubmit.co/tamara@dipierre-paginasweb.com" method="post">
                         <div class="row">
                           <div class="col-md-12">
                             <h2>Hablemos!</h2>
                           </div>
                           <div class="col-md-6">
+                            <input type="hidden" name="_next" value="https://dipierre-paginasweb.github.io/Back-end/Catering/DDD_1/gracias.html">
                             <fieldset>
                               <input name="name" type="text" class="form-control" id="name" placeholder="Tu nombre" required="">
                             </fieldset>
@@ -241,6 +243,7 @@ https://www.tooplate.com/view/2113-earth
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/accordations.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="plugin/components/jQuery/jquery-1.11.3.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -278,6 +281,43 @@ https://www.tooplate.com/view/2113-earth
                 log: function() { }
             };
         }
+    </script>
+
+    <!-- Button Whatsapp Structure -->
+    <div class="whatsapp_chat_support wcs_fixed_right" id="button-w">
+         
+      <div class="wcs_button wcs_button_circle">
+          <span class="fa fa-whatsapp"></span>
+      </div>  
+   
+      <div class="wcs_popup">
+          <div class="wcs_popup_close">
+              <span class="fa fa-close"></span>
+          </div>
+          <div class="wcs_popup_header">
+              <span class="fa fa-whatsapp"></span>
+              <strong>Servicio al cliente</strong>
+              
+              <div class="wcs_popup_header_description">¿Necesidad de ayuda? Chatea con nosotras en Whatsapp</div>
+  
+          </div>  
+          <div class="wcs_popup_input" 
+              data-number="+56945742639"
+              data-availability='{ "monday":"09:00-20:30", "tuesday":"09:00-20:30", "wednesday":"09:0-20:30", "thursday":"09:00-20:30", "friday":"09:00-20:30", "saturday":"10:00-14:30", "sunday":"10:00-14:30" }'>
+              <input type="text" placeholder="Escribir pregunta!" />
+              <i class="fa fa-play"></i>
+          </div>
+          <div class="wcs_popup_avatar">
+              <img src="assets/images/logocolor-01.png" alt="">
+          </div>
+      </div>
+  </div>
+
+  <script src="plugin/whatsapp-chat-support.js"></script>
+    <script>
+       $('#button-w').whatsappChatSupport({
+            defaultMsg : '',
+        });
     </script>
 
   </body>

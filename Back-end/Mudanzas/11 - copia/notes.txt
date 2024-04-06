@@ -1,0 +1,20 @@
+
+
+
+
+
+
+                <!-- Seccion aspiradora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('aspiradora')" onmouseout="ocultarTexto('aspiradora')">
+                    <input type="checkbox" id="checkboxaspiradora" onchange="toggleObjeto('aspiradora')" data-nombre="Aspiradora">
+                    <label class="imagen-container" for="checkboxaspiradora">
+                        <img id="aspiradora-container" class="imagen-boton" src="imagenes/aspiradora.png" alt="aspiradora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadaspiradora"></label>
+                        <input type="number" id="cantidadaspiradora" value="1" min="1" onchange="actualizarCantidad('aspiradora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoaspiradora">Aspiradora</div>
+                </div>

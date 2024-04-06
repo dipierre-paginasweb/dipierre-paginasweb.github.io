@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Calculadora de Metros Cúbicos</title>
+
+    <script>
+        function scrollToTitulo() {
+            // Seleccionar la sección con el id "titulo"
+            const tituloSection = document.getElementById('titulo');
+    
+            // Hacer scroll a la sección "titulo"
+            tituloSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</head>
+
+
+<body>
+
+    <section id="bienvenida"> 
+        <h1>Planifica tu mudanza con nosotros<br>Comienza hoy mismo ¡Gratis!</h1>
+        <button onclick="scrollToTitulo()">¡Comienza!</button> 
+    </section>
+
+    <!-- Secciones principales -->
+    <section>
+
+        <div class="titulo"  id="titulo">  
+            <h1>Selecciona los muebles de tu hogar:</h1>
+        </div>
+
+        <div class="seccion">
+            <div class="opcion" id="recamara" onclick="mostrarImagenes('recamaraImagenes')">
+                <h2>Recámara</h2> <img src="imagenes/cama1.png" alt="Recámara">
+            </div>
+
+            <div class="opcion" id="sala" onclick="mostrarImagenes('salaImagenes')">
+                <h2>Sala</h2> <img src="imagenes/imagen2.png" alt="Sala">
+            </div>
+
+            <div class="opcion" id="cocina" onclick="mostrarImagenes('cocinaImagenes')">
+                <h2>Cocina</h2> <img class="imagen-cocina" img src="imagenes/estufa.png" alt="Cocina">
+            </div>
+
+            <div class="opcion" id="patio" onclick="mostrarImagenes('patioImagenes')">
+                <h2>Patio</h2> <img class="imagen-patio" img src="imagenes/patio.png" alt="patio">
+            </div>
+
+            <div class="opcion" id="oficina" onclick="mostrarImagenes('oficinaImagenes')">
+                <h2>Oficina</h2> <img class="imagen-oficina" img src="imagenes/oficina.png" alt="oficina">
+            </div>
+
+            <div class="opcion" id="otros">
+                <h2>Otros</h2> <img class="imagen-otros" img src="imagenes/otros.png" alt="otros">
+            </div>
+        </div>
+
+        <!-- Sección "Elige Elementos" -->
+        <div id="eligeElementos">
+
+            <!-- Imágenes para la sección Recámara -->
+            <div id="recamaraImagenes" style="display: none;" >
+
+
+                <!-- Seccion cama doble -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('camadoble')" onmouseout="ocultarTexto('camadoble')">
+                    <input type="checkbox" id="checkboxcamadoble" onchange="toggleObjeto('camadoble')" data-nombre="Cama Doble">
+                    <label class="imagen-container" for="checkboxcamadoble">
+                        <img id="camadoble-container" class="imagen-boton" src="imagenes/cama.png" alt="camadoble">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcamadoble"></label>
+                        <input type="number" id="cantidadcamadoble" value="1" min="1" onchange="actualizarCantidad('camadoble', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocamadoble">Cama Doble</div>
+                </div>
+
+                <!-- Seccion cama simple -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('camasimple')" onmouseout="ocultarTexto('camasimple')">
+                    <input type="checkbox" id="checkboxcamasimple" onchange="toggleObjeto('camasimple')" data-nombre="Cama Simple">
+                    <label class="imagen-container" for="checkboxcamasimple">
+                        <img id="camasimple-container" class="imagen-boton" src="imagenes/camasimple.png" alt="camasimple">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcamasimple"></label>
+                        <input type="number" id="cantidadcamasimple" value="1" min="1" onchange="actualizarCantidad('camasimple', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocamasimple">Cama Simple</div>
+                </div>
+
+                <!-- Seccion cabecera -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cabecera')" onmouseout="ocultarTexto('cabecera')">
+                    <input type="checkbox" id="checkboxcabecera" onchange="toggleObjeto('cabecera')" data-nombre="Cabecera">
+                    <label class="imagen-container" for="checkboxcabecera">
+                        <img id="cabecera-container" class="imagen-boton" src="imagenes/cabecera.png" alt="cabecera">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcabecera"></label>
+                        <input type="number" id="cantidadcabecera" value="1" min="1" onchange="actualizarCantidad('cabecera', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocabecera">Cabecera</div>
+                </div>
+
+                <!-- Seccion cuna -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cuna')" onmouseout="ocultarTexto('cuna')">
+                    <input type="checkbox" id="checkboxcuna" onchange="toggleObjeto('cuna')" data-nombre="Cuna">
+                    <label class="imagen-container" for="checkboxcuna">
+                        <img id="cuna-container" class="imagen-boton" src="imagenes/cuna.png" alt="cuna">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcuna"></label>
+                        <input type="number" id="cantidadcuna" value="1" min="1" onchange="actualizarCantidad('cuna', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocuna">Cuna</div>
+                </div>                
+
+                <!-- Seccion almohada -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('almohada')" onmouseout="ocultarTexto('almohada')">
+                    <input type="checkbox" id="checkboxalmohada" onchange="toggleObjeto('almohada')" data-nombre="Almohada">
+                    <label class="imagen-container" for="checkboxalmohada">
+                        <img id="almohada-container" class="imagen-boton" src="imagenes/almohada.png" alt="almohada">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadalmohada"></label>
+                        <input type="number" id="cantidadalmohada" value="1" min="1" onchange="actualizarCantidad('almohada', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoalmohada">Almohada</div>
+                </div>
+
+                <!-- Seccion televisor -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('televisor')" onmouseout="ocultarTexto('televisor')">
+                    <input type="checkbox" id="checkboxtelevisor" onchange="toggleObjeto('televisor')" data-nombre="Televisor 14'">
+                    <label class="imagen-container" for="checkboxtelevisor">
+                        <img id="televisor-container" class="imagen-boton" src="imagenes/televisor.png" alt="televisor">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtelevisor"></label>
+                        <input type="number" id="cantidadtelevisor" value="1" min="1" onchange="actualizarCantidad('televisor', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotelevisor">Televisor 14"</div>
+                </div>
+
+                <!-- Seccion mesanoche -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('mesanoche')" onmouseout="ocultarTexto('mesanoche')">
+                    <input type="checkbox" id="checkboxmesanoche" onchange="toggleObjeto('mesanoche')" data-nombre="Mesa de noche">
+                    <label class="imagen-container" for="checkboxmesanoche">
+                        <img id="mesanoche-container" class="imagen-boton" src="imagenes/mesanoche.png" alt="mesanoche">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmesanoche"></label>
+                        <input type="number" id="cantidadmesanoche" value="1" min="1" onchange="actualizarCantidad('mesanoche', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomesanoche">Velador</div>
+                </div>
+
+                <!-- Seccion lamparapequeña -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lamparapequeña')" onmouseout="ocultarTexto('lamparapequeña')">
+                    <input type="checkbox" id="checkboxlamparapequeña" onchange="toggleObjeto('lamparapequeña')" data-nombre="Lampara pequeña">
+                    <label class="imagen-container" for="checkboxlamparapequeña">
+                        <img id="lamparapequeña-container" class="imagen-boton" src="imagenes/lamparapequeña.png" alt="lamparapequeña">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlamparapequeña"></label>
+                        <input type="number" id="cantidadlamparapequeña" value="1" min="1" onchange="actualizarCantidad('lamparapequeña', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolamparapequeña">Lampara pequeña</div>
+                </div>              
+
+                <!-- Seccion lamparadepie -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lamparadepie')" onmouseout="ocultarTexto('lamparadepie')">
+                    <input type="checkbox" id="checkboxlamparadepie" onchange="toggleObjeto('lamparadepie')" data-nombre="Lampara Grande">
+                    <label class="imagen-container" for="checkboxlamparadepie">
+                        <img id="lamparadepie-container" class="imagen-boton" src="imagenes/lamparadepie.png" alt="lamparadepie">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlamparadepie"></label>
+                        <input type="number" id="cantidadlamparadepie" value="1" min="1" onchange="actualizarCantidad('lamparadepie', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolamparadepie">Lampara Grande</div>
+                </div>              
+
+                <!-- Seccion espejo -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('espejo')" onmouseout="ocultarTexto('espejo')">
+                    <input type="checkbox" id="checkboxespejo" onchange="toggleObjeto('espejo')" data-nombre="Espejo rectangular">
+                    <label class="imagen-container" for="checkboxespejo">
+                        <img id="espejo-container" class="imagen-boton" src="imagenes/espejo.png" alt="espejo">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadespejo"></label>
+                        <input type="number" id="cantidadespejo" value="1" min="1" onchange="actualizarCantidad('espejo', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoespejo">Espejo rectangular</div>
+                </div>
+
+                <!-- Seccion armario -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('armario')" onmouseout="ocultarTexto('armario')">
+                    <input type="checkbox" id="checkboxarmario" onchange="toggleObjeto('armario')" data-nombre="Armario">
+                    <label class="imagen-container" for="checkboxarmario">
+                        <img id="armario-container" class="imagen-boton" src="imagenes/armario.png" alt="armario">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadarmario"></label>
+                        <input type="number" id="cantidadarmario" value="1" min="1" onchange="actualizarCantidad('armario', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoarmario">Armario</div>
+                </div>             
+
+                <!-- Seccion alfombra -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('alfombra')" onmouseout="ocultarTexto('alfombra')">
+                    <input type="checkbox" id="checkboxalfombra" onchange="toggleObjeto('alfombra')" data-nombre="Alfombra">
+                    <label class="imagen-container" for="checkboxalfombra">
+                        <img id="alfombra-container" class="imagen-boton" src="imagenes/alfombra.png" alt="alfombra">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadalfombra"></label>
+                        <input type="number" id="cantidadalfombra" value="1" min="1" onchange="actualizarCantidad('alfombra', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoalfombra">Alfombra</div>
+                </div>
+
+                <!-- Seccion repisa -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('repisa')" onmouseout="ocultarTexto('repisa')">
+                    <input type="checkbox" id="checkboxrepisa" onchange="toggleObjeto('repisa')" data-nombre="Repisa">
+                    <label class="imagen-container" for="checkboxrepisa">
+                        <img id="repisa-container" class="imagen-boton" src="imagenes/repisa.png" alt="repisa">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadrepisa"></label>
+                        <input type="number" id="cantidadrepisa" value="1" min="1" onchange="actualizarCantidad('repisa', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textorepisa">Repisa</div>
+                </div>
+
+                <!-- Seccion tocador -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('tocador')" onmouseout="ocultarTexto('tocador')">
+                    <input type="checkbox" id="checkboxtocador" onchange="toggleObjeto('tocador')" data-nombre="Tocador">
+                    <label class="imagen-container" for="checkboxtocador">
+                        <img id="tocador-container" class="imagen-boton" src="imagenes/tocador.png" alt="tocador">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtocador"></label>
+                        <input type="number" id="cantidadtocador" value="1" min="1" onchange="actualizarCantidad('tocador', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotocador">Tocador</div>
+                </div>
+
+                <!-- Seccion cestaropa -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cestaropa')" onmouseout="ocultarTexto('cestaropa')">
+                    <input type="checkbox" id="checkboxcestaropa" onchange="toggleObjeto('cestaropa')" data-nombre="Cesto">
+                    <label class="imagen-container" for="checkboxcestaropa">
+                        <img id="cestaropa-container" class="imagen-boton" src="imagenes/cestaropa.png" alt="cestaropa">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcestaropa"></label>
+                        <input type="number" id="cantidadcestaropa" value="1" min="1" onchange="actualizarCantidad('cestaropa', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocestaropa">Cesto</div>
+                </div>
+
+                <!-- Seccion puf -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('puf')" onmouseout="ocultarTexto('puf')">
+                    <input type="checkbox" id="checkboxpuf" onchange="toggleObjeto('puf')" data-nombre="Puf">
+                    <label class="imagen-container" for="checkboxpuf">
+                        <img id="puf-container" class="imagen-boton" src="imagenes/puf.png" alt="puf">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpuf"></label>
+                        <input type="number" id="cantidadpuf" value="1" min="1" onchange="actualizarCantidad('puf', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopuf">Puf</div>
+                </div>
+
+                <!-- Seccion roller -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('roller')" onmouseout="ocultarTexto('roller')">
+                    <input type="checkbox" id="checkboxroller" onchange="toggleObjeto('roller')" data-nombre="Roller">
+                    <label class="imagen-container" for="checkboxroller">
+                        <img id="roller-container" class="imagen-boton" src="imagenes/roller.png" alt="roller">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadroller"></label>
+                        <input type="number" id="cantidadroller" value="1" min="1" onchange="actualizarCantidad('roller', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoroller">Roller</div>
+                </div>
+
+                <!-- Seccion relojpared -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('relojpared')" onmouseout="ocultarTexto('relojpared')">
+                    <input type="checkbox" id="checkboxrelojpared" onchange="toggleObjeto('relojpared')" data-nombre="Reloj Pared">
+                    <label class="imagen-container" for="checkboxrelojpared">
+                        <img id="relojpared-container" class="imagen-boton" src="imagenes/relojpared.png" alt="relojpared">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadrelojpared"></label>
+                        <input type="number" id="cantidadrelojpared" value="1" min="1" onchange="actualizarCantidad('relojpared', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textorelojpared">Reloj Pared</div>
+                </div>
+
+                <!-- Seccion estante -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('estante')" onmouseout="ocultarTexto('estante')">
+                    <input type="checkbox" id="checkboxestante" onchange="toggleObjeto('estante')" data-nombre="Estante">
+                    <label class="imagen-container" for="checkboxestante">
+                        <img id="estante-container" class="imagen-boton" src="imagenes/estante.png" alt="estante">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadestante"></label>
+                        <input type="number" id="cantidadestante" value="1" min="1" onchange="actualizarCantidad('estante', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoestante">Estante</div>
+                </div>
+
+                <!-- Seccion colgador -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('colgador')" onmouseout="ocultarTexto('colgador')">
+                    <input type="checkbox" id="checkboxcolgador" onchange="toggleObjeto('colgador')" data-nombre="Colgador">
+                    <label class="imagen-container" for="checkboxcolgador">
+                        <img id="colgador-container" class="imagen-boton" src="imagenes/colgador.png" alt="colgador">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcolgador"></label>
+                        <input type="number" id="cantidadcolgador" value="1" min="1" onchange="actualizarCantidad('colgador', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocolgador">Colgador</div>
+                </div>
+
+                <!-- Seccion ventiladordepiso -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('ventiladordepiso')" onmouseout="ocultarTexto('ventiladordepiso')">
+                    <input type="checkbox" id="checkboxventiladordepiso" onchange="toggleObjeto('ventiladordepiso')" data-nombre="Ventilador">
+                    <label class="imagen-container" for="checkboxventiladordepiso">
+                        <img id="ventiladordepiso-container" class="imagen-boton" src="imagenes/ventiladordepiso.png" alt="ventiladordepiso">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadventiladordepiso"></label>
+                        <input type="number" id="cantidadventiladordepiso" value="1" min="1" onchange="actualizarCantidad('ventiladordepiso', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoventiladordepiso">Ventilador</div>
+                </div>
+
+                <!-- Seccion aireacondicionado -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('aireacondicionado')" onmouseout="ocultarTexto('aireacondicionado')">
+                    <input type="checkbox" id="checkboxaireacondicionado" onchange="toggleObjeto('aireacondicionado')" data-nombre="Aire Acondicionado">
+                    <label class="imagen-container" for="checkboxaireacondicionado">
+                        <img id="aireacondicionado-container" class="imagen-boton" src="imagenes/aireacondicionado.png" alt="aireacondicionado">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadaireacondicionado"></label>
+                        <input type="number" id="cantidadaireacondicionado" value="1" min="1" onchange="actualizarCantidad('aireacondicionado', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoaireacondicionado">Aire</div>
+                </div>
+
+
+                <!-- Agregar más imágenes según sea necesario -->           
+
+            </div>
+
+            <!-- Imágenes para la sección Sala -->
+            <div id="salaImagenes" style="display: none;">
+
+                
+                <!-- Seccion sofa3puestos -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sofa3puestos')" onmouseout="ocultarTexto('sofa3puestos')">
+                    <input type="checkbox" id="checkboxsofa3puestos" onchange="toggleObjeto('sofa3puestos')" data-nombre="Sofá de 3 Puesto">
+                    <label class="imagen-container" for="checkboxsofa3puestos">
+                        <img id="sofa3puestos-container" class="imagen-boton" src="imagenes/sofa3puestos.png" alt="sofa3puestos">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsofa3puestos"></label>
+                        <input type="number" id="cantidadsofa3puestos" value="1" min="1" onchange="actualizarCantidad('sofa3puestos', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosofa3puestos">Sofá 3 puestos</div>
+                </div>
+
+                <!-- Seccion sofa2puestos -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sofa2puestos')" onmouseout="ocultarTexto('sofa2puestos')">
+                    <input type="checkbox" id="checkboxsofa2puestos" onchange="toggleObjeto('sofa2puestos')" data-nombre="Sofá de 2 Puesto">
+                    <label class="imagen-container" for="checkboxsofa2puestos">
+                        <img id="sofa2puestos-container" class="imagen-boton" src="imagenes/sofa2puestos.png" alt="sofa2puestos">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsofa2puestos"></label>
+                        <input type="number" id="cantidadsofa2puestos" value="1" min="1" onchange="actualizarCantidad('sofa2puestos', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosofa2puestos">Sofá 2 puestos</div>
+                </div>
+
+                <!-- Seccion sofa1puesto -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sofa1puesto')" onmouseout="ocultarTexto('sofa1puesto')">
+                    <input type="checkbox" id="checkboxsofa1puesto" onchange="toggleObjeto('sofa1puesto')" data-nombre="Sofá de 1 Puesto">
+                    <label class="imagen-container" for="checkboxsofa1puesto">
+                        <img id="sofa1puesto-container" class="imagen-boton" src="imagenes/sofa1puesto.png" alt="sofa1puesto">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsofa1puesto"></label>
+                        <input type="number" id="cantidadsofa1puesto" value="1" min="1" onchange="actualizarCantidad('sofa1puesto', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosofa1puesto">Sofá 1 Puesto</div>
+                </div>
+
+                <!-- Seccion sofaL -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sofaL')" onmouseout="ocultarTexto('sofaL')">
+                    <input type="checkbox" id="checkboxsofaL" onchange="toggleObjeto('sofaL')" data-nombre="Sofá en L">
+                    <label class="imagen-container" for="checkboxsofaL">
+                        <img id="sofaL-container" class="imagen-boton" src="imagenes/sofaL.png" alt="sofaL">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsofaL"></label>
+                        <input type="number" id="cantidadsofaL" value="1" min="1" onchange="actualizarCantidad('sofaL', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosofaL">Sofá en L</div>
+                </div>
+
+                <!-- Seccion mesadetv -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('mesadetv')" onmouseout="ocultarTexto('mesadetv')">
+                    <input type="checkbox" id="checkboxmesadetv" onchange="toggleObjeto('mesadetv')" data-nombre="Mesa de TV">
+                    <label class="imagen-container" for="checkboxmesadetv">
+                        <img id="mesadetv-container" class="imagen-boton" src="imagenes/mesadetv.png" alt="mesadetv">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmesadetv"></label>
+                        <input type="number" id="cantidadmesadetv" value="1" min="1" onchange="actualizarCantidad('mesadetv', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomesadetv">Mesa de TV</div>
+                </div>
+
+                <!-- Seccion mesaauxiliar -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('mesaauxiliar')" onmouseout="ocultarTexto('mesaauxiliar')">
+                    <input type="checkbox" id="checkboxmesaauxiliar" onchange="toggleObjeto('mesaauxiliar')" data-nombre="Mesa auxiliar">
+                    <label class="imagen-container" for="checkboxmesaauxiliar">
+                        <img id="mesaauxiliar-container" class="imagen-boton" src="imagenes/mesaauxiliar.png" alt="mesaauxiliar">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmesaauxiliar"></label>
+                        <input type="number" id="cantidadmesaauxiliar" value="1" min="1" onchange="actualizarCantidad('mesaauxiliar', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomesaauxiliar">Mesa auxiliar</div>
+                </div>                
+
+                <!-- Seccion mesadecentro -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('mesadecentro')" onmouseout="ocultarTexto('mesadecentro')">
+                    <input type="checkbox" id="checkboxmesadecentro" onchange="toggleObjeto('mesadecentro')" data-nombre="Mesa de centro">
+                    <label class="imagen-container" for="checkboxmesadecentro">
+                        <img id="mesadecentro-container" class="imagen-boton" src="imagenes/mesadecentro.png" alt="mesadecentro">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmesadecentro"></label>
+                        <input type="number" id="cantidadmesadecentro" value="1" min="1" onchange="actualizarCantidad('mesadecentro', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomesadecentro">Mesa Centro</div>
+                </div>
+
+                <!-- Seccion sillacomedor -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sillacomedor')" onmouseout="ocultarTexto('sillacomedor')">
+                    <input type="checkbox" id="checkboxsillacomedor" onchange="toggleObjeto('sillacomedor')" data-nombre="Silla de comedor">
+                    <label class="imagen-container" for="checkboxsillacomedor">
+                        <img id="sillacomedor-container" class="imagen-boton" src="imagenes/sillacomedor.png" alt="sillacomedor">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsillacomedor"></label>
+                        <input type="number" id="cantidadsillacomedor" value="1" min="1" onchange="actualizarCantidad('sillacomedor', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosillacomedor">Silla de comedor</div>
+                </div>
+
+                <!-- Seccion televisor32pulgadas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('televisor32pulgadas')" onmouseout="ocultarTexto('televisor32pulgadas')">
+                    <input type="checkbox" id="checkboxtelevisor32pulgadas" onchange="toggleObjeto('televisor32pulgadas')" data-nombre="TV 32'">
+                    <label class="imagen-container" for="checkboxtelevisor32pulgadas">
+                        <img id="televisor32pulgadas-container" class="imagen-boton" src="imagenes/televisor32pulgadas.png" alt="televisor32pulgadas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtelevisor32pulgadas"></label>
+                        <input type="number" id="cantidadtelevisor32pulgadas" value="1" min="1" onchange="actualizarCantidad('televisor32pulgadas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotelevisor32pulgadas">TV 32"</div>
+                </div>
+
+                <!-- Seccion televisor43pulgadas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('televisor43pulgadas')" onmouseout="ocultarTexto('televisor43pulgadas')">
+                    <input type="checkbox" id="checkboxtelevisor43pulgadas" onchange="toggleObjeto('televisor43pulgadas')" data-nombre="TV 43'">
+                    <label class="imagen-container" for="checkboxtelevisor43pulgadas">
+                        <img id="televisor43pulgadas-container" class="imagen-boton" src="imagenes/televisor43pulgadas.png" alt="televisor43pulgadas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtelevisor43pulgadas"></label>
+                        <input type="number" id="cantidadtelevisor43pulgadas" value="1" min="1" onchange="actualizarCantidad('televisor43pulgadas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotelevisor43pulgadas">TV 43"</div>
+                </div>
+
+                <!-- Seccion televisor50pulgadas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('televisor50pulgadas')" onmouseout="ocultarTexto('televisor50pulgadas')">
+                    <input type="checkbox" id="checkboxtelevisor50pulgadas" onchange="toggleObjeto('televisor50pulgadas')" data-nombre="TV 50'">
+                    <label class="imagen-container" for="checkboxtelevisor50pulgadas">
+                        <img id="televisor50pulgadas-container" class="imagen-boton" src="imagenes/televisor50pulgadas.png" alt="televisor50pulgadas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtelevisor50pulgadas"></label>
+                        <input type="number" id="cantidadtelevisor50pulgadas" value="1" min="1" onchange="actualizarCantidad('televisor50pulgadas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotelevisor50pulgadas">TV 50"</div>
+                </div>
+
+                <!-- Seccion librero -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('librero')" onmouseout="ocultarTexto('librero')">
+                    <input type="checkbox" id="checkboxlibrero" onchange="toggleObjeto('librero')" data-nombre="Librero">
+                    <label class="imagen-container" for="checkboxlibrero">
+                        <img id="librero-container" class="imagen-boton" src="imagenes/librero.png" alt="librero">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlibrero"></label>
+                        <input type="number" id="cantidadlibrero" value="1" min="1" onchange="actualizarCantidad('librero', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolibrero">Librero</div>
+                </div>
+
+                <!-- Seccion comedor2puestos -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('comedor2puestos')" onmouseout="ocultarTexto('comedor2puestos')">
+                    <input type="checkbox" id="checkboxcomedor2puestos" onchange="toggleObjeto('comedor2puestos')" data-nombre="Comedor Doble">
+                    <label class="imagen-container" for="checkboxcomedor2puestos">
+                        <img id="comedor2puestos-container" class="imagen-boton" src="imagenes/comedor2puestos.png" alt="comedor2puestos">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcomedor2puestos"></label>
+                        <input type="number" id="cantidadcomedor2puestos" value="1" min="1" onchange="actualizarCantidad('comedor2puestos', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocomedor2puestos">Comedor Doble</div>
+                </div>
+
+                <!-- Seccion lamparatecho -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lamparatecho')" onmouseout="ocultarTexto('lamparatecho')">
+                    <input type="checkbox" id="checkboxlamparatecho" onchange="toggleObjeto('lamparatecho')" data-nombre="Lampara Techo">
+                    <label class="imagen-container" for="checkboxlamparatecho">
+                        <img id="lamparatecho-container" class="imagen-boton" src="imagenes/lamparatecho.png" alt="lamparatecho">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlamparatecho"></label>
+                        <input type="number" id="cantidadlamparatecho" value="1" min="1" onchange="actualizarCantidad('lamparatecho', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolamparatecho">Lampara Techo</div>
+                </div>
+
+                <!-- Seccion lamparagrande -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lamparagrande')" onmouseout="ocultarTexto('lamparagrande')">
+                    <input type="checkbox" id="checkboxlamparagrande" onchange="toggleObjeto('lamparagrande')" data-nombre="Lampara Grande">
+                    <label class="imagen-container" for="checkboxlamparagrande">
+                        <img id="lamparagrande-container" class="imagen-boton" src="imagenes/lamparagrande.png" alt="lamparagrande">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlamparagrande"></label>
+                        <input type="number" id="cantidadlamparagrande" value="1" min="1" onchange="actualizarCantidad('lamparagrande', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolamparagrande">Lampara Grande</div>
+                </div>
+
+
+                <!-- Seccion macetero -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('macetero')" onmouseout="ocultarTexto('macetero')">
+                    <input type="checkbox" id="checkboxmacetero" onchange="toggleObjeto('macetero')" data-nombre="Macetero">
+                    <label class="imagen-container" for="checkboxmacetero">
+                        <img id="macetero-container" class="imagen-boton" src="imagenes/macetero.png" alt="macetero">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmacetero"></label>
+                        <input type="number" id="cantidadmacetero" value="1" min="1" onchange="actualizarCantidad('macetero', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomacetero">Macetero</div>
+                </div>                
+
+                <!-- Seccion espejoredondo -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('espejoredondo')" onmouseout="ocultarTexto('espejoredondo')">
+                    <input type="checkbox" id="checkboxespejoredondo" onchange="toggleObjeto('espejoredondo')" data-nombre="Espejo Redondo">
+                    <label class="imagen-container" for="checkboxespejoredondo">
+                        <img id="espejoredondo-container" class="imagen-boton" src="imagenes/espejoredondo.png" alt="espejoredondo">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadespejoredondo"></label>
+                        <input type="number" id="cantidadespejoredondo" value="1" min="1" onchange="actualizarCantidad('espejoredondo', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoespejoredondo">Espejo Redondo</div>
+                </div>
+
+                <!-- Seccion espejogrande -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('espejogrande')" onmouseout="ocultarTexto('espejogrande')">
+                    <input type="checkbox" id="checkboxespejogrande" onchange="toggleObjeto('espejogrande')" data-nombre="Espejo Grande">
+                    <label class="imagen-container" for="checkboxespejogrande">
+                        <img id="espejogrande-container" class="imagen-boton" src="imagenes/espejogrande.png" alt="espejogrande">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadespejogrande"></label>
+                        <input type="number" id="cantidadespejogrande" value="1" min="1" onchange="actualizarCantidad('espejogrande', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoespejogrande">Espejo Grande</div>
+                </div>
+
+                <!-- Seccion minibar -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('minibar')" onmouseout="ocultarTexto('minibar')">
+                    <input type="checkbox" id="checkboxminibar" onchange="toggleObjeto('minibar')" data-nombre="Minibar">
+                    <label class="imagen-container" for="checkboxminibar">
+                        <img id="minibar-container" class="imagen-boton" src="imagenes/minibar.png" alt="minibar">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadminibar"></label>
+                        <input type="number" id="cantidadminibar" value="1" min="1" onchange="actualizarCantidad('minibar', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textominibar">Minibar</div>
+                </div>
+
+                <!-- Seccion cuadro -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cuadro')" onmouseout="ocultarTexto('cuadro')">
+                    <input type="checkbox" id="checkboxcuadro" onchange="toggleObjeto('cuadro')" data-nombre="Cuadro">
+                    <label class="imagen-container" for="checkboxcuadro">
+                        <img id="cuadro-container" class="imagen-boton" src="imagenes/cuadro.png" alt="cuadro">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcuadro"></label>
+                        <input type="number" id="cantidadcuadro" value="1" min="1" onchange="actualizarCantidad('cuadro', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocuadro">Cuadro</div>
+                </div>
+
+                <!-- Seccion equiposonido -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('equiposonido')" onmouseout="ocultarTexto('equiposonido')">
+                    <input type="checkbox" id="checkboxequiposonido" onchange="toggleObjeto('equiposonido')" data-nombre="Equipo Sonido">
+                    <label class="imagen-container" for="checkboxequiposonido">
+                        <img id="equiposonido-container" class="imagen-boton" src="imagenes/equiposonido.png" alt="equiposonido">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadequiposonido"></label>
+                        <input type="number" id="cantidadequiposonido" value="1" min="1" onchange="actualizarCantidad('equiposonido', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoequiposonido">Equipo Sonido</div>
+                </div>
+
+                <!-- Seccion cortinatela -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cortinatela')" onmouseout="ocultarTexto('cortinatela')">
+                    <input type="checkbox" id="checkboxcortinatela" onchange="toggleObjeto('cortinatela')" data-nombre="Cortina Tela">
+                    <label class="imagen-container" for="checkboxcortinatela">
+                        <img id="cortinatela-container" class="imagen-boton" src="imagenes/cortinatela.png" alt="cortinatela">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcortinatela"></label>
+                        <input type="number" id="cantidadcortinatela" value="1" min="1" onchange="actualizarCantidad('cortinatela', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocortinatela">Cortina Tela</div>
+                </div>
+
+                <!-- Agregar más imágenes según sea necesario -->
+            </div>
+            
+            <!-- Imágenes para la sección cocina -->
+            <div id="cocinaImagenes" style="display: none;">
+
+                <!-- Seccion gabinete -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('gabinete')" onmouseout="ocultarTexto('gabinete')">
+                    <input type="checkbox" id="checkboxgabinete" onchange="toggleObjeto('gabinete')" data-nombre="gabinete">
+                    <label class="imagen-container" for="checkboxgabinete">
+                        <img id="gabinete-container" class="imagen-boton" src="imagenes/gabinete.png" alt="Gabinete">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadgabinete"></label>
+                        <input type="number" id="cantidadgabinete" value="1" min="1" onchange="actualizarCantidad('gabinete', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textogabinete">Gabinete</div>
+                </div>                
+
+                <!-- Seccion microondas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('microondas')" onmouseout="ocultarTexto('microondas')">
+                    <input type="checkbox" id="checkboxmicroondas" onchange="toggleObjeto('microondas')" data-nombre="Microondas">
+                    <label class="imagen-container" for="checkboxmicroondas">
+                        <img id="microondas-container" class="imagen-boton" src="imagenes/microondas.png" alt="microondas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmicroondas"></label>
+                        <input type="number" id="cantidadmicroondas" value="1" min="1" onchange="actualizarCantidad('microondas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomicroondas">Microondas</div>
+                </div>
+
+                <!-- Seccion nevera -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('nevera')" onmouseout="ocultarTexto('nevera')">
+                    <input type="checkbox" id="checkboxnevera" onchange="toggleObjeto('nevera')" data-nombre="Nevera">
+                    <label class="imagen-container" for="checkboxnevera">
+                        <img id="nevera-container" class="imagen-boton" src="imagenes/nevera.png" alt="nevera">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadnevera"></label>
+                        <input type="number" id="cantidadnevera" value="1" min="1" onchange="actualizarCantidad('nevera', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textonevera">Nevera</div>
+                </div>
+
+                <!-- Seccion licuadora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('licuadora')" onmouseout="ocultarTexto('licuadora')">
+                    <input type="checkbox" id="checkboxlicuadora" onchange="toggleObjeto('licuadora')" data-nombre="Licuadora">
+                    <label class="imagen-container" for="checkboxlicuadora">
+                        <img id="licuadora-container" class="imagen-boton" src="imagenes/licuadora.png" alt="licuadora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlicuadora"></label>
+                        <input type="number" id="cantidadlicuadora" value="1" min="1" onchange="actualizarCantidad('licuadora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolicuadora">Licuadora</div>
+                </div>
+
+                <!-- Seccion horno -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('horno')" onmouseout="ocultarTexto('horno')">
+                    <input type="checkbox" id="checkboxhorno" onchange="toggleObjeto('horno')" data-nombre="Horno">
+                    <label class="imagen-container" for="checkboxhorno">
+                        <img id="horno-container" class="imagen-boton" src="imagenes/horno.png" alt="horno">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadhorno"></label>
+                        <input type="number" id="cantidadhorno" value="1" min="1" onchange="actualizarCantidad('horno', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textohorno">Horno</div>
+                </div>
+
+                <!-- Seccion hervidor -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('hervidor')" onmouseout="ocultarTexto('hervidor')">
+                    <input type="checkbox" id="checkboxhervidor" onchange="toggleObjeto('hervidor')" data-nombre="Hervidor">
+                    <label class="imagen-container" for="checkboxhervidor">
+                        <img id="hervidor-container" class="imagen-boton" src="imagenes/hervidor.png" alt="hervidor">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadhervidor"></label>
+                        <input type="number" id="cantidadhervidor" value="1" min="1" onchange="actualizarCantidad('hervidor', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textohervidor">Hervidor</div>
+                </div>
+
+                <!-- Seccion tostadora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('tostadora')" onmouseout="ocultarTexto('tostadora')">
+                    <input type="checkbox" id="checkboxtostadora" onchange="toggleObjeto('tostadora')" data-nombre="Tostadora">
+                    <label class="imagen-container" for="checkboxtostadora">
+                        <img id="tostadora-container" class="imagen-boton" src="imagenes/tostadora.png" alt="tostadora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtostadora"></label>
+                        <input type="number" id="cantidadtostadora" value="1" min="1" onchange="actualizarCantidad('tostadora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotostadora">Tostadora</div>
+                </div>
+
+                <!-- Seccion sandwichera -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sandwichera')" onmouseout="ocultarTexto('sandwichera')">
+                    <input type="checkbox" id="checkboxsandwichera" onchange="toggleObjeto('sandwichera')" data-nombre="Sandwichera">
+                    <label class="imagen-container" for="checkboxsandwichera">
+                        <img id="sandwichera-container" class="imagen-boton" src="imagenes/sandwichera.png" alt="sandwichera">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsandwichera"></label>
+                        <input type="number" id="cantidadsandwichera" value="1" min="1" onchange="actualizarCantidad('sandwichera', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosandwichera">Sandwich</div>
+                </div>
+
+                <!-- Seccion cafetera -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cafetera')" onmouseout="ocultarTexto('cafetera')">
+                    <input type="checkbox" id="checkboxcafetera" onchange="toggleObjeto('cafetera')" data-nombre="Cafetera">
+                    <label class="imagen-container" for="checkboxcafetera">
+                        <img id="cafetera-container" class="imagen-boton" src="imagenes/cafetera.png" alt="cafetera">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcafetera"></label>
+                        <input type="number" id="cantidadcafetera" value="1" min="1" onchange="actualizarCantidad('cafetera', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocafetera">Cafetera</div>
+                </div>
+
+                <!-- Seccion cafeterafrancesa -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cafeterafrancesa')" onmouseout="ocultarTexto('cafeterafrancesa')">
+                    <input type="checkbox" id="checkboxcafeterafrancesa" onchange="toggleObjeto('cafeterafrancesa')" data-nombre="Cafetera Francesa">
+                    <label class="imagen-container" for="checkboxcafeterafrancesa">
+                        <img id="cafeterafrancesa-container" class="imagen-boton" src="imagenes/cafeterafrancesa.png" alt="cafeterafrancesa">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcafeterafrancesa"></label>
+                        <input type="number" id="cantidadcafeterafrancesa" value="1" min="1" onchange="actualizarCantidad('cafeterafrancesa', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocafeterafrancesa">Cafetera Francesa</div>
+                </div>
+
+                <!-- Seccion bascula -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('bascula')" onmouseout="ocultarTexto('bascula')">
+                    <input type="checkbox" id="checkboxbascula" onchange="toggleObjeto('bascula')" data-nombre="Bascula">
+                    <label class="imagen-container" for="checkboxbascula">
+                        <img id="bascula-container" class="imagen-boton" src="imagenes/bascula.png" alt="bascula">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadbascula"></label>
+                        <input type="number" id="cantidadbascula" value="1" min="1" onchange="actualizarCantidad('bascula', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textobascula">Bascula</div>
+                </div>
+
+                <!-- Seccion lavavajillas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lavavajillas')" onmouseout="ocultarTexto('lavavajillas')">
+                    <input type="checkbox" id="checkboxlavavajillas" onchange="toggleObjeto('lavavajillas')" data-nombre="Lavavajillas">
+                    <label class="imagen-container" for="checkboxlavavajillas">
+                        <img id="lavavajillas-container" class="imagen-boton" src="imagenes/lavavajillas.png" alt="lavavajillas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlavavajillas"></label>
+                        <input type="number" id="cantidadlavavajillas" value="1" min="1" onchange="actualizarCantidad('lavavajillas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolavavajillas">Lavavajillas</div>
+                </div>
+
+                <!-- Seccion batidora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('batidora')" onmouseout="ocultarTexto('batidora')">
+                    <input type="checkbox" id="checkboxbatidora" onchange="toggleObjeto('batidora')" data-nombre="Batidora">
+                    <label class="imagen-container" for="checkboxbatidora">
+                        <img id="batidora-container" class="imagen-boton" src="imagenes/batidora.png" alt="batidora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadbatidora"></label>
+                        <input type="number" id="cantidadbatidora" value="1" min="1" onchange="actualizarCantidad('batidora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textobatidora">Batidora</div>
+                </div>
+
+                <!-- Seccion exprimidor -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('exprimidor')" onmouseout="ocultarTexto('exprimidor')">
+                    <input type="checkbox" id="checkboxexprimidor" onchange="toggleObjeto('exprimidor')" data-nombre="Exprimidor">
+                    <label class="imagen-container" for="checkboxexprimidor">
+                        <img id="exprimidor-container" class="imagen-boton" src="imagenes/exprimidor.png" alt="exprimidor">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadexprimidor"></label>
+                        <input type="number" id="cantidadexprimidor" value="1" min="1" onchange="actualizarCantidad('exprimidor', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoexprimidor">Exprimidor</div>
+                </div>
+
+                <!-- Seccion ollapresion -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('ollapresion')" onmouseout="ocultarTexto('ollapresion')">
+                    <input type="checkbox" id="checkboxollapresion" onchange="toggleObjeto('ollapresion')" data-nombre="Olla Presion">
+                    <label class="imagen-container" for="checkboxollapresion">
+                        <img id="ollapresion-container" class="imagen-boton" src="imagenes/ollapresion.png" alt="ollapresion">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadollapresion"></label>
+                        <input type="number" id="cantidadollapresion" value="1" min="1" onchange="actualizarCantidad('ollapresion', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoollapresion">Olla Presion</div>
+                </div>
+
+                <!-- Seccion wok -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('wok')" onmouseout="ocultarTexto('wok')">
+                    <input type="checkbox" id="checkboxwok" onchange="toggleObjeto('wok')" data-nombre="Wok">
+                    <label class="imagen-container" for="checkboxwok">
+                        <img id="wok-container" class="imagen-boton" src="imagenes/wok.png" alt="wok">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadwok"></label>
+                        <input type="number" id="cantidadwok" value="1" min="1" onchange="actualizarCantidad('wok', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textowok">Wok</div>
+                </div>
+
+                <!-- Seccion olla -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('olla')" onmouseout="ocultarTexto('olla')">
+                    <input type="checkbox" id="checkboxolla" onchange="toggleObjeto('olla')" data-nombre="olla">
+                    <label class="imagen-container" for="checkboxolla">
+                        <img id="olla-container" class="imagen-boton" src="imagenes/olla.png" alt="Olla">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadolla"></label>
+                        <input type="number" id="cantidadolla" value="1" min="1" onchange="actualizarCantidad('olla', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoolla">Olla</div>
+                </div>                
+
+                <!-- Seccion sarten -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sarten')" onmouseout="ocultarTexto('sarten')">
+                    <input type="checkbox" id="checkboxsarten" onchange="toggleObjeto('sarten')" data-nombre="Sarten">
+                    <label class="imagen-container" for="checkboxsarten">
+                        <img id="sarten-container" class="imagen-boton" src="imagenes/sarten.png" alt="sarten">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsarten"></label>
+                        <input type="number" id="cantidadsarten" value="1" min="1" onchange="actualizarCantidad('sarten', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosarten">Sarten</div>
+                </div>
+
+                <!-- Seccion extractor -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('extractor')" onmouseout="ocultarTexto('extractor')">
+                    <input type="checkbox" id="checkboxextractor" onchange="toggleObjeto('extractor')" data-nombre="Extractor">
+                    <label class="imagen-container" for="checkboxextractor">
+                        <img id="extractor-container" class="imagen-boton" src="imagenes/extractor.png" alt="extractor">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadextractor"></label>
+                        <input type="number" id="cantidadextractor" value="1" min="1" onchange="actualizarCantidad('extractor', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoextractor">Extractor</div>
+                </div>
+
+                <!-- Seccion freidora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('freidora')" onmouseout="ocultarTexto('freidora')">
+                    <input type="checkbox" id="checkboxfreidora" onchange="toggleObjeto('freidora')" data-nombre="Freidora">
+                    <label class="imagen-container" for="checkboxfreidora">
+                        <img id="freidora-container" class="imagen-boton" src="imagenes/freidora.png" alt="freidora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadfreidora"></label>
+                        <input type="number" id="cantidadfreidora" value="1" min="1" onchange="actualizarCantidad('freidora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textofreidora">Freidora</div>
+                </div>
+
+                <!-- Seccion copa -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('copa')" onmouseout="ocultarTexto('copa')">
+                    <input type="checkbox" id="checkboxcopa" onchange="toggleObjeto('copa')" data-nombre="Copa">
+                    <label class="imagen-container" for="checkboxcopa">
+                        <img id="copa-container" class="imagen-boton" src="imagenes/copa.png" alt="copa">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcopa"></label>
+                        <input type="number" id="cantidadcopa" value="1" min="1" onchange="actualizarCantidad('copa', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocopa">Copa</div>
+                </div>
+
+                <!-- Seccion lavaplatos -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lavaplatos')" onmouseout="ocultarTexto('lavaplatos')">
+                    <input type="checkbox" id="checkboxlavaplatos" onchange="toggleObjeto('lavaplatos')" data-nombre="Lavaplatos">
+                    <label class="imagen-container" for="checkboxlavaplatos">
+                        <img id="lavaplatos-container" class="imagen-boton" src="imagenes/lavaplatos.png" alt="lavaplatos">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlavaplatos"></label>
+                        <input type="number" id="cantidadlavaplatos" value="1" min="1" onchange="actualizarCantidad('lavaplatos', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolavaplatos">Lavaplatos</div>
+                </div>
+            </div>
+
+            <!-- Imágenes para la sección patio -->
+            <div id="patioImagenes" style="display: none;">     
+                
+                <!-- Seccion parrillasimple -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('parrillasimple')" onmouseout="ocultarTexto('parrillasimple')">
+                    <input type="checkbox" id="checkboxparrillasimple" onchange="toggleObjeto('parrillasimple')" data-nombre="Parrilla Simple">
+                    <label class="imagen-container" for="checkboxparrillasimple">
+                        <img id="parrillasimple-container" class="imagen-boton" src="imagenes/parrillasimple.png" alt="parrillasimple">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadparrillasimple"></label>
+                        <input type="number" id="cantidadparrillasimple" value="1" min="1" onchange="actualizarCantidad('parrillasimple', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoparrillasimple">Parrilla Simple</div>
+                </div>
+
+                <!-- Seccion parrillagrande -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('parrillagrande')" onmouseout="ocultarTexto('parrillagrande')">
+                    <input type="checkbox" id="checkboxparrillagrande" onchange="toggleObjeto('parrillagrande')" data-nombre="Parrilla Grande">
+                    <label class="imagen-container" for="checkboxparrillagrande">
+                        <img id="parrillagrande-container" class="imagen-boton" src="imagenes/parrillagrande.png" alt="parrillagrande">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadparrillagrande"></label>
+                        <input type="number" id="cantidadparrillagrande" value="1" min="1" onchange="actualizarCantidad('parrillagrande', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoparrillagrande">Parrilla Grande</div>
+                </div>
+
+                <!-- Seccion parasol -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('parasol')" onmouseout="ocultarTexto('parasol')">
+                    <input type="checkbox" id="checkboxparasol" onchange="toggleObjeto('parasol')" data-nombre="Parasol">
+                    <label class="imagen-container" for="checkboxparasol">
+                        <img id="parasol-container" class="imagen-boton" src="imagenes/parasol.png" alt="parasol">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadparasol"></label>
+                        <input type="number" id="cantidadparasol" value="1" min="1" onchange="actualizarCantidad('parasol', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoparasol">Parasol</div>
+                </div>
+
+                <!-- Seccion mesapicnic -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('mesapicnic')" onmouseout="ocultarTexto('mesapicnic')">
+                    <input type="checkbox" id="checkboxmesapicnic" onchange="toggleObjeto('mesapicnic')" data-nombre="Mesa Picnic">
+                    <label class="imagen-container" for="checkboxmesapicnic">
+                        <img id="mesapicnic-container" class="imagen-boton" src="imagenes/mesapicnic.png" alt="mesapicnic">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmesapicnic"></label>
+                        <input type="number" id="cantidadmesapicnic" value="1" min="1" onchange="actualizarCantidad('mesapicnic', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomesapicnic">Mesa Picnic</div>
+                </div>
+
+                <!-- Seccion sillajardin -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sillajardin')" onmouseout="ocultarTexto('sillajardin')">
+                    <input type="checkbox" id="checkboxsillajardin" onchange="toggleObjeto('sillajardin')" data-nombre="Silla Jardin">
+                    <label class="imagen-container" for="checkboxsillajardin">
+                        <img id="sillajardin-container" class="imagen-boton" src="imagenes/sillajardin.png" alt="sillajardin">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsillajardin"></label>
+                        <input type="number" id="cantidadsillajardin" value="1" min="1" onchange="actualizarCantidad('sillajardin', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosillajardin">Silla Jardin</div>
+                </div>
+
+                <!-- Seccion sillaplaya -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sillaplaya')" onmouseout="ocultarTexto('sillaplaya')">
+                    <input type="checkbox" id="checkboxsillaplaya" onchange="toggleObjeto('sillaplaya')" data-nombre="Silla Playa">
+                    <label class="imagen-container" for="checkboxsillaplaya">
+                        <img id="sillaplaya-container" class="imagen-boton" src="imagenes/sillaplaya.png" alt="sillaplaya">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsillaplaya"></label>
+                        <input type="number" id="cantidadsillaplaya" value="1" min="1" onchange="actualizarCantidad('sillaplaya', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosillaplaya">Silla Playa</div>
+                </div>
+
+                <!-- Seccion basurero -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('basurero')" onmouseout="ocultarTexto('basurero')">
+                    <input type="checkbox" id="checkboxbasurero" onchange="toggleObjeto('basurero')" data-nombre="Basurero">
+                    <label class="imagen-container" for="checkboxbasurero">
+                        <img id="basurero-container" class="imagen-boton" src="imagenes/basurero.png" alt="basurero">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadbasurero"></label>
+                        <input type="number" id="cantidadbasurero" value="1" min="1" onchange="actualizarCantidad('basurero', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textobasurero">Basurero</div>
+                </div>
+
+                <!-- Seccion casaperro -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('casaperro')" onmouseout="ocultarTexto('casaperro')">
+                    <input type="checkbox" id="checkboxcasaperro" onchange="toggleObjeto('casaperro')" data-nombre="Casita Perro">
+                    <label class="imagen-container" for="checkboxcasaperro">
+                        <img id="casaperro-container" class="imagen-boton" src="imagenes/casaperro.png" alt="casaperro">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcasaperro"></label>
+                        <input type="number" id="cantidadcasaperro" value="1" min="1" onchange="actualizarCantidad('casaperro', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocasaperro">Casita Perro</div>
+                </div>
+
+                <!-- Seccion mecedora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('mecedora')" onmouseout="ocultarTexto('mecedora')">
+                    <input type="checkbox" id="checkboxmecedora" onchange="toggleObjeto('mecedora')" data-nombre="Mecedora">
+                    <label class="imagen-container" for="checkboxmecedora">
+                        <img id="mecedora-container" class="imagen-boton" src="imagenes/mecedora.png" alt="mecedora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmecedora"></label>
+                        <input type="number" id="cantidadmecedora" value="1" min="1" onchange="actualizarCantidad('mecedora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomecedora">Mecedora</div>
+                </div>
+
+                <!-- Seccion taburete -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('taburete')" onmouseout="ocultarTexto('taburete')">
+                    <input type="checkbox" id="checkboxtaburete" onchange="toggleObjeto('taburete')" data-nombre="Taburete">
+                    <label class="imagen-container" for="checkboxtaburete">
+                        <img id="taburete-container" class="imagen-boton" src="imagenes/taburete.png" alt="taburete">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtaburete"></label>
+                        <input type="number" id="cantidadtaburete" value="1" min="1" onchange="actualizarCantidad('taburete', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotaburete">Taburete</div>
+                </div>
+
+                <!-- Seccion sillacolgante -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sillacolgante')" onmouseout="ocultarTexto('sillacolgante')">
+                    <input type="checkbox" id="checkboxsillacolgante" onchange="toggleObjeto('sillacolgante')" data-nombre="Silla Colgante">
+                    <label class="imagen-container" for="checkboxsillacolgante">
+                        <img id="sillacolgante-container" class="imagen-boton" src="imagenes/sillacolgante.png" alt="sillacolgante">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsillacolgante"></label>
+                        <input type="number" id="cantidadsillacolgante" value="1" min="1" onchange="actualizarCantidad('sillacolgante', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosillacolgante">Silla Colgante</div>
+                </div>
+
+                <!-- Seccion alimentomascota -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('alimentomascota')" onmouseout="ocultarTexto('alimentomascota')">
+                    <input type="checkbox" id="checkboxalimentomascota" onchange="toggleObjeto('alimentomascota')" data-nombre="Alimento mascota">
+                    <label class="imagen-container" for="checkboxalimentomascota">
+                        <img id="alimentomascota-container" class="imagen-boton" src="imagenes/alimentomascota.png" alt="alimentomascota">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadalimentomascota"></label>
+                        <input type="number" id="cantidadalimentomascota" value="1" min="1" onchange="actualizarCantidad('alimentomascota', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoalimentomascota">Alimento mascota</div>
+                </div>
+
+                <!-- Seccion setdeterraza -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('setdeterraza')" onmouseout="ocultarTexto('setdeterraza')">
+                    <input type="checkbox" id="checkboxsetdeterraza" onchange="toggleObjeto('setdeterraza')" data-nombre="Set Terraza">
+                    <label class="imagen-container" for="checkboxsetdeterraza">
+                        <img id="setdeterraza-container" class="imagen-boton" src="imagenes/setdeterraza.png" alt="setdeterraza">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsetdeterraza"></label>
+                        <input type="number" id="cantidadsetdeterraza" value="1" min="1" onchange="actualizarCantidad('setdeterraza', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosetdeterraza">Set Terraza</div>
+                </div>
+
+                <!-- Seccion farola -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('farola')" onmouseout="ocultarTexto('farola')">
+                    <input type="checkbox" id="checkboxfarola" onchange="toggleObjeto('farola')" data-nombre="Farola terraza">
+                    <label class="imagen-container" for="checkboxfarola">
+                        <img id="farola-container" class="imagen-boton" src="imagenes/farola.png" alt="farola">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadfarola"></label>
+                        <input type="number" id="cantidadfarola" value="1" min="1" onchange="actualizarCantidad('farola', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textofarola">Farola terraza</div>
+                </div>
+
+                <!-- Seccion dispensadoragua -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('dispensadoragua')" onmouseout="ocultarTexto('dispensadoragua')">
+                    <input type="checkbox" id="checkboxdispensadoragua" onchange="toggleObjeto('dispensadoragua')" data-nombre="Dispensador Agua">
+                    <label class="imagen-container" for="checkboxdispensadoragua">
+                        <img id="dispensadoragua-container" class="imagen-boton" src="imagenes/dispensadoragua.png" alt="dispensadoragua">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidaddispensadoragua"></label>
+                        <input type="number" id="cantidaddispensadoragua" value="1" min="1" onchange="actualizarCantidad('dispensadoragua', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textodispensadoragua">Dispensador Agua</div>
+                </div>
+
+                <!-- Seccion jacuzzi -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('jacuzzi')" onmouseout="ocultarTexto('jacuzzi')">
+                    <input type="checkbox" id="checkboxjacuzzi" onchange="toggleObjeto('jacuzzi')" data-nombre="Jacuzzi">
+                    <label class="imagen-container" for="checkboxjacuzzi">
+                        <img id="jacuzzi-container" class="imagen-boton" src="imagenes/jacuzzi.png" alt="jacuzzi">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadjacuzzi"></label>
+                        <input type="number" id="cantidadjacuzzi" value="1" min="1" onchange="actualizarCantidad('jacuzzi', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textojacuzzi">Jacuzzi</div>
+                </div>
+
+                <!-- Seccion plantas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('plantas')" onmouseout="ocultarTexto('plantas')">
+                    <input type="checkbox" id="checkboxplantas" onchange="toggleObjeto('plantas')" data-nombre="Plantas">
+                    <label class="imagen-container" for="checkboxplantas">
+                        <img id="plantas-container" class="imagen-boton" src="imagenes/plantas.png" alt="plantas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadplantas"></label>
+                        <input type="number" id="cantidadplantas" value="1" min="1" onchange="actualizarCantidad('plantas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoplantas">Plantas</div>
+                </div>
+
+                <!-- Seccion cortacesped -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cortacesped')" onmouseout="ocultarTexto('cortacesped')">
+                    <input type="checkbox" id="checkboxcortacesped" onchange="toggleObjeto('cortacesped')" data-nombre="Corta Cesped">
+                    <label class="imagen-container" for="checkboxcortacesped">
+                        <img id="cortacesped-container" class="imagen-boton" src="imagenes/cortacesped.png" alt="cortacesped">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcortacesped"></label>
+                        <input type="number" id="cantidadcortacesped" value="1" min="1" onchange="actualizarCantidad('cortacesped', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocortacesped">Corta Cesped</div>
+                </div>
+
+                <!-- Seccion carretilla -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('carretilla')" onmouseout="ocultarTexto('carretilla')">
+                    <input type="checkbox" id="checkboxcarretilla" onchange="toggleObjeto('carretilla')" data-nombre="Carretilla">
+                    <label class="imagen-container" for="checkboxcarretilla">
+                        <img id="carretilla-container" class="imagen-boton" src="imagenes/carretilla.png" alt="carretilla">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcarretilla"></label>
+                        <input type="number" id="cantidadcarretilla" value="1" min="1" onchange="actualizarCantidad('carretilla', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocarretilla">Carretilla</div>
+                </div>
+
+                <!-- Seccion generadorelectrico -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('generadorelectrico')" onmouseout="ocultarTexto('generadorelectrico')">
+                    <input type="checkbox" id="checkboxgeneradorelectrico" onchange="toggleObjeto('generadorelectrico')" data-nombre="Generador electrico">
+                    <label class="imagen-container" for="checkboxgeneradorelectrico">
+                        <img id="generadorelectrico-container" class="imagen-boton" src="imagenes/generadorelectrico.png" alt="generadorelectrico">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadgeneradorelectrico"></label>
+                        <input type="number" id="cantidadgeneradorelectrico" value="1" min="1" onchange="actualizarCantidad('generadorelectrico', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textogeneradorelectrico">Generador electrico</div>
+                </div>
+
+                <!-- Seccion sierra -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sierra')" onmouseout="ocultarTexto('sierra')">
+                    <input type="checkbox" id="checkboxsierra" onchange="toggleObjeto('sierra')" data-nombre="Sierra">
+                    <label class="imagen-container" for="checkboxsierra">
+                        <img id="sierra-container" class="imagen-boton" src="imagenes/sierra.png" alt="sierra">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsierra"></label>
+                        <input type="number" id="cantidadsierra" value="1" min="1" onchange="actualizarCantidad('sierra', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosierra">Sierra</div>
+                </div>
+
+                <!-- Seccion taladro -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('taladro')" onmouseout="ocultarTexto('taladro')">
+                    <input type="checkbox" id="checkboxtaladro" onchange="toggleObjeto('taladro')" data-nombre="taladro">
+                    <label class="imagen-container" for="checkboxtaladro">
+                        <img id="taladro-container" class="imagen-boton" src="imagenes/taladro.png" alt="Taladro">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtaladro"></label>
+                        <input type="number" id="cantidadtaladro" value="1" min="1" onchange="actualizarCantidad('taladro', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotaladro">Taladro</div>
+                </div>
+
+
+            </div>
+        
+            <!-- Imágenes para la sección oficina -->
+            <div id="oficinaImagenes" style="display: none;"> 
+
+                <!-- Seccion sillagamer -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sillagamer')" onmouseout="ocultarTexto('sillagamer')">
+                    <input type="checkbox" id="checkboxsillagamer" onchange="toggleObjeto('sillagamer')" data-nombre="Silla Gamer">
+                    <label class="imagen-container" for="checkboxsillagamer">
+                        <img id="sillagamer-container" class="imagen-boton" src="imagenes/sillagamer.png" alt="sillagamer">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsillagamer"></label>
+                        <input type="number" id="cantidadsillagamer" value="1" min="1" onchange="actualizarCantidad('sillagamer', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosillagamer">Silla Gamer</div>
+                </div>
+
+                <!-- Seccion sillaoficina -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('sillaoficina')" onmouseout="ocultarTexto('sillaoficina')">
+                    <input type="checkbox" id="checkboxsillaoficina" onchange="toggleObjeto('sillaoficina')" data-nombre="Silla Oficina">
+                    <label class="imagen-container" for="checkboxsillaoficina">
+                        <img id="sillaoficina-container" class="imagen-boton" src="imagenes/sillaoficina.png" alt="sillaOficina">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsillaoficina"></label>
+                        <input type="number" id="cantidadsillaoficina" value="1" min="1" onchange="actualizarCantidad('sillaoficina', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosillaoficina">Silla Oficina</div>
+                </div>
+
+                <!-- Seccion escritoriocajon -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('escritoriocajon')" onmouseout="ocultarTexto('escritoriocajon')">
+                    <input type="checkbox" id="checkboxescritoriocajon" onchange="toggleObjeto('escritoriocajon')" data-nombre="Escritorio Cajon">
+                    <label class="imagen-container" for="checkboxescritoriocajon">
+                        <img id="escritoriocajon-container" class="imagen-boton" src="imagenes/escritoriocajon.png" alt="escritoriocajon">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadescritoriocajon"></label>
+                        <input type="number" id="cantidadescritoriocajon" value="1" min="1" onchange="actualizarCantidad('escritoriocajon', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoescritoriocajon">Escritorio Cajon</div>
+                </div>
+
+                <!-- Seccion escritoriosimple -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('escritoriosimple')" onmouseout="ocultarTexto('escritoriosimple')">
+                    <input type="checkbox" id="checkboxescritoriosimple" onchange="toggleObjeto('escritoriosimple')" data-nombre="Escritorio Simple">
+                    <label class="imagen-container" for="checkboxescritoriosimple">
+                        <img id="escritoriosimple-container" class="imagen-boton" src="imagenes/escritoriosimple.png" alt="escritoriosimple">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadescritoriosimple"></label>
+                        <input type="number" id="cantidadescritoriosimple" value="1" min="1" onchange="actualizarCantidad('escritoriosimple', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoescritoriosimple">Escritorio Simple</div>
+                </div>
+
+                <!-- Seccion pctorre -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('pctorre')" onmouseout="ocultarTexto('pctorre')">
+                    <input type="checkbox" id="checkboxpctorre" onchange="toggleObjeto('pctorre')" data-nombre="PC Torre">
+                    <label class="imagen-container" for="checkboxpctorre">
+                        <img id="pctorre-container" class="imagen-boton" src="imagenes/pctorre.png" alt="pctorre">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpctorre"></label>
+                        <input type="number" id="cantidadpctorre" value="1" min="1" onchange="actualizarCantidad('pctorre', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopctorre">PC Torre</div>
+                </div>
+
+                <!-- Seccion pcportatil -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('pcportatil')" onmouseout="ocultarTexto('pcportatil')">
+                    <input type="checkbox" id="checkboxpcportatil" onchange="toggleObjeto('pcportatil')" data-nombre="PC Portatil">
+                    <label class="imagen-container" for="checkboxpcportatil">
+                        <img id="pcportatil-container" class="imagen-boton" src="imagenes/pcportatil.png" alt="pcportatil">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpcportatil"></label>
+                        <input type="number" id="cantidadpcportatil" value="1" min="1" onchange="actualizarCantidad('pcportatil', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopcportatil">PC Portatil</div>
+                </div>
+
+                <!-- Seccion impresora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('impresora')" onmouseout="ocultarTexto('impresora')">
+                    <input type="checkbox" id="checkboximpresora" onchange="toggleObjeto('impresora')" data-nombre="Impresora">
+                    <label class="imagen-container" for="checkboximpresora">
+                        <img id="impresora-container" class="imagen-boton" src="imagenes/impresora.png" alt="impresora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadimpresora"></label>
+                        <input type="number" id="cantidadimpresora" value="1" min="1" onchange="actualizarCantidad('impresora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoimpresora">Impresora</div>
+                </div>
+
+                <!-- Seccion impresora3d -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('impresora3d')" onmouseout="ocultarTexto('impresora3d')">
+                    <input type="checkbox" id="checkboximpresora3d" onchange="toggleObjeto('impresora3d')" data-nombre="Impresora 3D">
+                    <label class="imagen-container" for="checkboximpresora3d">
+                        <img id="impresora3d-container" class="imagen-boton" src="imagenes/impresora3d.png" alt="impresora3d">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadimpresora3d"></label>
+                        <input type="number" id="cantidadimpresora3d" value="1" min="1" onchange="actualizarCantidad('impresora3d', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoimpresora3d">Impresora 3D</div>
+                </div>
+
+                <!-- Seccion scanner -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('scanner')" onmouseout="ocultarTexto('scanner')">
+                    <input type="checkbox" id="checkboxscanner" onchange="toggleObjeto('scanner')" data-nombre="Scanner">
+                    <label class="imagen-container" for="checkboxscanner">
+                        <img id="scanner-container" class="imagen-boton" src="imagenes/scanner.png" alt="scanner">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadscanner"></label>
+                        <input type="number" id="cantidadscanner" value="1" min="1" onchange="actualizarCantidad('scanner', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoscanner">Scanner</div>
+                </div>
+
+                <!-- Seccion parlante -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('parlante')" onmouseout="ocultarTexto('parlante')">
+                    <input type="checkbox" id="checkboxparlante" onchange="toggleObjeto('parlante')" data-nombre="Parlante">
+                    <label class="imagen-container" for="checkboxparlante">
+                        <img id="parlante-container" class="imagen-boton" src="imagenes/parlante.png" alt="parlante">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadparlante"></label>
+                        <input type="number" id="cantidadparlante" value="1" min="1" onchange="actualizarCantidad('parlante', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoparlante">Parlante</div>
+                </div>
+
+                <!-- Seccion lamparaescritorio -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lamparaescritorio')" onmouseout="ocultarTexto('lamparaescritorio')">
+                    <input type="checkbox" id="checkboxlamparaescritorio" onchange="toggleObjeto('lamparaescritorio')" data-nombre="Lampara escritorio">
+                    <label class="imagen-container" for="checkboxlamparaescritorio">
+                        <img id="lamparaescritorio-container" class="imagen-boton" src="imagenes/lamparaescritorio.png" alt="lamparaescritorio">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlamparaescritorio"></label>
+                        <input type="number" id="cantidadlamparaescritorio" value="1" min="1" onchange="actualizarCantidad('lamparaescritorio', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolamparaescritorio">Lampara escritorio</div>
+                </div>
+
+                <!-- Seccion archivador -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('archivador')" onmouseout="ocultarTexto('archivador')">
+                    <input type="checkbox" id="checkboxarchivador" onchange="toggleObjeto('archivador')" data-nombre="Archivador">
+                    <label class="imagen-container" for="checkboxarchivador">
+                        <img id="archivador-container" class="imagen-boton" src="imagenes/archivador.png" alt="archivador">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadarchivador"></label>
+                        <input type="number" id="cantidadarchivador" value="1" min="1" onchange="actualizarCantidad('archivador', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoarchivador">Archivador</div>
+                </div>
+
+                <!-- Seccion tablero -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('tablero')" onmouseout="ocultarTexto('tablero')">
+                    <input type="checkbox" id="checkboxtablero" onchange="toggleObjeto('tablero')" data-nombre="Tablero">
+                    <label class="imagen-container" for="checkboxtablero">
+                        <img id="tablero-container" class="imagen-boton" src="imagenes/tablero.png" alt="tablero">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtablero"></label>
+                        <input type="number" id="cantidadtablero" value="1" min="1" onchange="actualizarCantidad('tablero', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotablero">Tablero</div>
+                </div>
+
+                <!-- Seccion pizarra -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('pizarra')" onmouseout="ocultarTexto('pizarra')">
+                    <input type="checkbox" id="checkboxpizarra" onchange="toggleObjeto('pizarra')" data-nombre="Pizarra">
+                    <label class="imagen-container" for="checkboxpizarra">
+                        <img id="pizarra-container" class="imagen-boton" src="imagenes/pizarra.png" alt="pizarra">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpizarra"></label>
+                        <input type="number" id="cantidadpizarra" value="1" min="1" onchange="actualizarCantidad('pizarra', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopizarra">Pizarra</div>
+                </div>
+
+                <!-- Seccion papelero -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('papelero')" onmouseout="ocultarTexto('papelero')">
+                    <input type="checkbox" id="checkboxpapelero" onchange="toggleObjeto('papelero')" data-nombre="Papelero">
+                    <label class="imagen-container" for="checkboxpapelero">
+                        <img id="papelero-container" class="imagen-boton" src="imagenes/papelero.png" alt="papelero">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpapelero"></label>
+                        <input type="number" id="cantidadpapelero" value="1" min="1" onchange="actualizarCantidad('papelero', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopapelero">Papelero</div>
+                </div>
+
+                <!-- Seccion pantalla -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('pantalla')" onmouseout="ocultarTexto('pantalla')">
+                    <input type="checkbox" id="checkboxpantalla" onchange="toggleObjeto('pantalla')" data-nombre="Pantalla">
+                    <label class="imagen-container" for="checkboxpantalla">
+                        <img id="pantalla-container" class="imagen-boton" src="imagenes/pantalla.png" alt="pantalla">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpantalla"></label>
+                        <input type="number" id="cantidadpantalla" value="1" min="1" onchange="actualizarCantidad('pantalla', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopantalla">Pantalla</div>
+                </div>
+
+                <!-- Seccion calefactor -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('calefactor')" onmouseout="ocultarTexto('calefactor')">
+                    <input type="checkbox" id="checkboxcalefactor" onchange="toggleObjeto('calefactor')" data-nombre="Calefactor">
+                    <label class="imagen-container" for="checkboxcalefactor">
+                        <img id="calefactor-container" class="imagen-boton" src="imagenes/calefactor.png" alt="calefactor">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcalefactor"></label>
+                        <input type="number" id="cantidadcalefactor" value="1" min="1" onchange="actualizarCantidad('calefactor', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocalefactor">Calefactor</div>
+                </div>
+
+                <!-- Seccion maleta -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('maleta')" onmouseout="ocultarTexto('maleta')">
+                    <input type="checkbox" id="checkboxmaleta" onchange="toggleObjeto('maleta')" data-nombre="Maleta">
+                    <label class="imagen-container" for="checkboxmaleta">
+                        <img id="maleta-container" class="imagen-boton" src="imagenes/maleta.png" alt="maleta">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadmaleta"></label>
+                        <input type="number" id="cantidadmaleta" value="1" min="1" onchange="actualizarCantidad('maleta', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textomaleta">Maleta</div>
+                </div>
+
+                <!-- Seccion tornamesa -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('tornamesa')" onmouseout="ocultarTexto('tornamesa')">
+                    <input type="checkbox" id="checkboxtornamesa" onchange="toggleObjeto('tornamesa')" data-nombre="Tornamesa">
+                    <label class="imagen-container" for="checkboxtornamesa">
+                        <img id="tornamesa-container" class="imagen-boton" src="imagenes/tornamesa.png" alt="tornamesa">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtornamesa"></label>
+                        <input type="number" id="cantidadtornamesa" value="1" min="1" onchange="actualizarCantidad('tornamesa', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotornamesa">Tornamesa</div>
+                </div>
+
+                <!-- Seccion trofeo -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('trofeo')" onmouseout="ocultarTexto('trofeo')">
+                    <input type="checkbox" id="checkboxtrofeo" onchange="toggleObjeto('trofeo')" data-nombre="Trofeo">
+                    <label class="imagen-container" for="checkboxtrofeo">
+                        <img id="trofeo-container" class="imagen-boton" src="imagenes/trofeo.png" alt="trofeo">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtrofeo"></label>
+                        <input type="number" id="cantidadtrofeo" value="1" min="1" onchange="actualizarCantidad('trofeo', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotrofeo">Trofeo</div>
+                </div>
+
+                <!-- Seccion cajagrande -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajagrande')" onmouseout="ocultarTexto('cajagrande')">
+                    <input type="checkbox" id="checkboxcajagrande" onchange="toggleObjeto('cajagrande')" data-nombre="Caja grande">
+                    <label class="imagen-container" for="checkboxcajagrande">
+                        <img id="cajagrande-container" class="imagen-boton" src="imagenes/cajagrande.png" alt="cajagrande">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajagrande"></label>
+                        <input type="number" id="cantidadcajagrande" value="1" min="1" onchange="actualizarCantidad('cajagrande', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajagrande">Caja grande</div>
+                </div>
+
+                <!-- Seccion aspiradora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('aspiradora')" onmouseout="ocultarTexto('aspiradora')">
+                    <input type="checkbox" id="checkboxaspiradora" onchange="toggleObjeto('aspiradora')" data-nombre="Aspiradora">
+                    <label class="imagen-container" for="checkboxaspiradora">
+                        <img id="aspiradora-container" class="imagen-boton" src="imagenes/aspiradora.png" alt="aspiradora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadaspiradora"></label>
+                        <input type="number" id="cantidadaspiradora" value="1" min="1" onchange="actualizarCantidad('aspiradora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoaspiradora">Aspiradora</div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Imágenes para la sección otros -->
+            <div id="otrosImagenes" style="display: none;"> 
+
+                <!-- Seccion bicicleta -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('bicicleta')" onmouseout="ocultarTexto('bicicleta')">
+                    <input type="checkbox" id="checkboxbicicleta" onchange="toggleObjeto('bicicleta')" data-nombre="Bicicleta">
+                    <label class="imagen-container" for="checkboxbicicleta">
+                        <img id="bicicleta-container" class="imagen-boton" src="imagenes/bicicleta.png" alt="bicicleta">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadbicicleta"></label>
+                        <input type="number" id="cantidadbicicleta" value="1" min="1" onchange="actualizarCantidad('bicicleta', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textobicicleta">Bicicleta</div>
+                </div>
+
+                <!-- Seccion teclado -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('teclado')" onmouseout="ocultarTexto('teclado')">
+                    <input type="checkbox" id="checkboxteclado" onchange="toggleObjeto('teclado')" data-nombre="Teclado">
+                    <label class="imagen-container" for="checkboxteclado">
+                        <img id="teclado-container" class="imagen-boton" src="imagenes/teclado.png" alt="teclado">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadteclado"></label>
+                        <input type="number" id="cantidadteclado" value="1" min="1" onchange="actualizarCantidad('teclado', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoteclado">Teclado</div>
+                </div>
+
+                <!-- Seccion guitarra -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('guitarra')" onmouseout="ocultarTexto('guitarra')">
+                    <input type="checkbox" id="checkboxguitarra" onchange="toggleObjeto('guitarra')" data-nombre="Guitarra">
+                    <label class="imagen-container" for="checkboxguitarra">
+                        <img id="guitarra-container" class="imagen-boton" src="imagenes/guitarra.png" alt="guitarra">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadguitarra"></label>
+                        <input type="number" id="cantidadguitarra" value="1" min="1" onchange="actualizarCantidad('guitarra', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoguitarra">Guitarra</div>
+                </div>
+
+
+                <!-- Seccion cajafuerte -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajafuerte')" onmouseout="ocultarTexto('cajafuerte')">
+                    <input type="checkbox" id="checkboxcajafuerte" onchange="toggleObjeto('cajafuerte')" data-nombre="Caja fuerte">
+                    <label class="imagen-container" for="checkboxcajafuerte">
+                        <img id="cajafuerte-container" class="imagen-boton" src="imagenes/cajafuerte.png" alt="cajafuerte">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajafuerte"></label>
+                        <input type="number" id="cantidadcajafuerte" value="1" min="1" onchange="actualizarCantidad('cajafuerte', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajafuerte">Caja fuerte</div>
+                </div>
+
+                <!-- Seccion futbolin -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('futbolin')" onmouseout="ocultarTexto('futbolin')">
+                    <input type="checkbox" id="checkboxfutbolin" onchange="toggleObjeto('futbolin')" data-nombre="Futbolin">
+                    <label class="imagen-container" for="checkboxfutbolin">
+                        <img id="futbolin-container" class="imagen-boton" src="imagenes/futbolin.png" alt="futbolin">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadfutbolin"></label>
+                        <input type="number" id="cantidadfutbolin" value="1" min="1" onchange="actualizarCantidad('futbolin', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textofutbolin">Futbolin</div>
+                </div>
+
+                <!-- Seccion pingpong -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('pingpong')" onmouseout="ocultarTexto('pingpong')">
+                    <input type="checkbox" id="checkboxpingpong" onchange="toggleObjeto('pingpong')" data-nombre="Mesa Pingpong">
+                    <label class="imagen-container" for="checkboxpingpong">
+                        <img id="pingpong-container" class="imagen-boton" src="imagenes/pingpong.png" alt="pingpong">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpingpong"></label>
+                        <input type="number" id="cantidadpingpong" value="1" min="1" onchange="actualizarCantidad('pingpong', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopingpong">Mesa Pingpong</div>
+                </div>
+
+                <!-- Seccion videojuego -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('videojuego')" onmouseout="ocultarTexto('videojuego')">
+                    <input type="checkbox" id="checkboxvideojuego" onchange="toggleObjeto('videojuego')" data-nombre="Consola videojuego">
+                    <label class="imagen-container" for="checkboxvideojuego">
+                        <img id="videojuego-container" class="imagen-boton" src="imagenes/videojuego.png" alt="videojuego">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadvideojuego"></label>
+                        <input type="number" id="cantidadvideojuego" value="1" min="1" onchange="actualizarCantidad('videojuego', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textovideojuego">Consola videojuego</div>
+                </div>
+
+                <!-- Seccion tablasurf -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('tablasurf')" onmouseout="ocultarTexto('tablasurf')">
+                    <input type="checkbox" id="checkboxtablasurf" onchange="toggleObjeto('tablasurf')" data-nombre="Tabla deportiva">
+                    <label class="imagen-container" for="checkboxtablasurf">
+                        <img id="tablasurf-container" class="imagen-boton" src="imagenes/tablasurf.png" alt="tablasurf">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtablasurf"></label>
+                        <input type="number" id="cantidadtablasurf" value="1" min="1" onchange="actualizarCantidad('tablasurf', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotablasurf">Tabla deportiva</div>
+                </div>
+
+                <!-- Seccion scooter -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('scooter')" onmouseout="ocultarTexto('scooter')">
+                    <input type="checkbox" id="checkboxscooter" onchange="toggleObjeto('scooter')" data-nombre="Scooter">
+                    <label class="imagen-container" for="checkboxscooter">
+                        <img id="scooter-container" class="imagen-boton" src="imagenes/scooter.png" alt="scooter">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadscooter"></label>
+                        <input type="number" id="cantidadscooter" value="1" min="1" onchange="actualizarCantidad('scooter', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textoscooter">Scooter</div>
+                </div>
+
+                <!-- Seccion patines -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('patines')" onmouseout="ocultarTexto('patines')">
+                    <input type="checkbox" id="checkboxpatines" onchange="toggleObjeto('patines')" data-nombre="Patines">
+                    <label class="imagen-container" for="checkboxpatines">
+                        <img id="patines-container" class="imagen-boton" src="imagenes/patines.png" alt="patines">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpatines"></label>
+                        <input type="number" id="cantidadpatines" value="1" min="1" onchange="actualizarCantidad('patines', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopatines">Patines</div>
+                </div>
+
+                <!-- Seccion setpesas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('setpesas')" onmouseout="ocultarTexto('setpesas')">
+                    <input type="checkbox" id="checkboxsetpesas" onchange="toggleObjeto('setpesas')" data-nombre="Set pesas">
+                    <label class="imagen-container" for="checkboxsetpesas">
+                        <img id="setpesas-container" class="imagen-boton" src="imagenes/setpesas.png" alt="setpesas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadsetpesas"></label>
+                        <input type="number" id="cantidadsetpesas" value="1" min="1" onchange="actualizarCantidad('setpesas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textosetpesas">Set pesas</div>
+                </div>
+
+                <!-- Seccion bicicletaestatica -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('bicicletaestatica')" onmouseout="ocultarTexto('bicicletaestatica')">
+                    <input type="checkbox" id="checkboxbicicletaestatica" onchange="toggleObjeto('bicicletaestatica')" data-nombre="Bicicleta estatica">
+                    <label class="imagen-container" for="checkboxbicicletaestatica">
+                        <img id="bicicletaestatica-container" class="imagen-boton" src="imagenes/bicicletaestatica.png" alt="bicicletaestatica">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadbicicletaestatica"></label>
+                        <input type="number" id="cantidadbicicletaestatica" value="1" min="1" onchange="actualizarCantidad('bicicletaestatica', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textobicicletaestatica">Bicicleta estatica</div>
+                </div>
+
+                <!-- Seccion trotadora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('trotadora')" onmouseout="ocultarTexto('trotadora')">
+                    <input type="checkbox" id="checkboxtrotadora" onchange="toggleObjeto('trotadora')" data-nombre="Trotadora">
+                    <label class="imagen-container" for="checkboxtrotadora">
+                        <img id="trotadora-container" class="imagen-boton" src="imagenes/trotadora.png" alt="trotadora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadtrotadora"></label>
+                        <input type="number" id="cantidadtrotadora" value="1" min="1" onchange="actualizarCantidad('trotadora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textotrotadora">Trotadora</div>
+                </div>
+
+                <!-- Seccion lavadora -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('lavadora')" onmouseout="ocultarTexto('lavadora')">
+                    <input type="checkbox" id="checkboxlavadora" onchange="toggleObjeto('lavadora')" data-nombre="Lavadora">
+                    <label class="imagen-container" for="checkboxlavadora">
+                        <img id="lavadora-container" class="imagen-boton" src="imagenes/lavadora.png" alt="lavadora">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadlavadora"></label>
+                        <input type="number" id="cantidadlavadora" value="1" min="1" onchange="actualizarCantidad('lavadora', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textolavadora">Lavadora</div>
+                </div>
+
+                <!-- Seccion cajaherramientas -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajaherramientas')" onmouseout="ocultarTexto('cajaherramientas')">
+                    <input type="checkbox" id="checkboxcajaherramientas" onchange="toggleObjeto('cajaherramientas')" data-nombre="Caja herramienta">
+                    <label class="imagen-container" for="checkboxcajaherramientas">
+                        <img id="cajaherramientas-container" class="imagen-boton" src="imagenes/cajaherramientas.png" alt="cajaherramientas">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajaherramientas"></label>
+                        <input type="number" id="cantidadcajaherramientas" value="1" min="1" onchange="actualizarCantidad('cajaherramientas', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajaherramientas">Caja herramienta</div>
+                </div>
+
+                <!-- Seccion navidad -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('navidad')" onmouseout="ocultarTexto('navidad')">
+                    <input type="checkbox" id="checkboxnavidad" onchange="toggleObjeto('navidad')" data-nombre="Decoración Navidad">
+                    <label class="imagen-container" for="checkboxnavidad">
+                        <img id="navidad-container" class="imagen-boton" src="imagenes/navidad.png" alt="navidad">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadnavidad"></label>
+                        <input type="number" id="cantidadnavidad" value="1" min="1" onchange="actualizarCantidad('navidad', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textonavidad">Decoración Navidad</div>
+                </div>
+
+                <!-- Seccion pecera -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('pecera')" onmouseout="ocultarTexto('pecera')">
+                    <input type="checkbox" id="checkboxpecera" onchange="toggleObjeto('pecera')" data-nombre="Pecera">
+                    <label class="imagen-container" for="checkboxpecera">
+                        <img id="pecera-container" class="imagen-boton" src="imagenes/pecera.png" alt="pecera">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadpecera"></label>
+                        <input type="number" id="cantidadpecera" value="1" min="1" onchange="actualizarCantidad('pecera', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textopecera">Pecera</div>
+                </div>
+
+                <!-- Seccion coche -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('coche')" onmouseout="ocultarTexto('coche')">
+                    <input type="checkbox" id="checkboxcoche" onchange="toggleObjeto('coche')" data-nombre="coche">
+                    <label class="imagen-container" for="checkboxcoche">
+                        <img id="coche-container" class="imagen-boton" src="imagenes/coche.png" alt="coche">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcoche"></label>
+                        <input type="number" id="cantidadcoche" value="1" min="1" onchange="actualizarCantidad('coche', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocoche">coche</div>
+                </div>
+
+                <!-- Seccion cajaropa -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajaropa')" onmouseout="ocultarTexto('cajaropa')">
+                    <input type="checkbox" id="checkboxcajaropa" onchange="toggleObjeto('cajaropa')" data-nombre="Caja Ropa">
+                    <label class="imagen-container" for="checkboxcajaropa">
+                        <img id="cajaropa-container" class="imagen-boton" src="imagenes/cajaropa.png" alt="cajaropa">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajaropa"></label>
+                        <input type="number" id="cantidadcajaropa" value="1" min="1" onchange="actualizarCantidad('cajaropa', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajaropa">Caja Ropa</div>
+                </div>
+
+                <!-- Seccion cajajuguetes -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajajuguetes')" onmouseout="ocultarTexto('cajajuguetes')">
+                    <input type="checkbox" id="checkboxcajajuguetes" onchange="toggleObjeto('cajajuguetes')" data-nombre="Caja Juguetes">
+                    <label class="imagen-container" for="checkboxcajajuguetes">
+                        <img id="cajajuguetes-container" class="imagen-boton" src="imagenes/cajajuguetes.png" alt="cajajuguetes">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajajuguetes"></label>
+                        <input type="number" id="cantidadcajajuguetes" value="1" min="1" onchange="actualizarCantidad('cajajuguetes', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajajuguetes">Caja Juguetes</div>
+                </div>
+
+                <!-- Seccion cajafragil -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajafragil')" onmouseout="ocultarTexto('cajafragil')">
+                    <input type="checkbox" id="checkboxcajafragil" onchange="toggleObjeto('cajafragil')" data-nombre="Caja frágil">
+                    <label class="imagen-container" for="checkboxcajafragil">
+                        <img id="cajafragil-container" class="imagen-boton" src="imagenes/cajafragil.png" alt="cajafragil">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajafragil"></label>
+                        <input type="number" id="cantidadcajafragil" value="1" min="1" onchange="actualizarCantidad('cajafragil', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajafragil">Caja frágil</div>
+                </div>
+
+                <!-- Seccion cajalibro -->
+                <div class="contenedor-objeto" onmouseover="mostrarTexto('cajalibro')" onmouseout="ocultarTexto('cajalibro')">
+                    <input type="checkbox" id="checkboxcajalibro" onchange="toggleObjeto('cajalibro')" data-nombre="Caja libros">
+                    <label class="imagen-container" for="checkboxcajalibro">
+                        <img id="cajalibro-container" class="imagen-boton" src="imagenes/cajalibro.png" alt="cajalibro">
+                    </label>
+
+                    <div class="contador">
+                        <label for="cantidadcajalibro"></label>
+                        <input type="number" id="cantidadcajalibro" value="1" min="1" onchange="actualizarCantidad('cajalibro', this.value)">
+                    </div>
+
+                    <div class="texto-desvaneciente" id="textocajalibro">Caja libros</div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <section class="resumen">
+        <div>
+            <div id="resultado" class="seccion-derecha"></div>
+        </div>
+
+        <div id="resumen">
+            <h2>Resumen:</h2>
+            <ul id="listaResumen"></ul>
+        </div>
+    </section>
+         
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

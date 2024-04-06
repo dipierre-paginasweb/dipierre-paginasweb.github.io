@@ -1,0 +1,307 @@
+h1 {
+    font-size: 2.5em; /* Puedes ajustar el valor según tus preferencias */
+}
+
+/* Titulo "Selecciona los muebles de tu hogar:" */
+.titulo, .h1{
+    margin-top: 100px;
+    color: #3f525b;
+}
+
+h2{
+    color: #ffffff;
+}
+
+ul{
+    color: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    background-color: #F5F0EA;
+    position: relative;
+}
+
+/* --------------------------------Página de INICIO----------------------------------------- */
+
+/* Estilos para la página de inicio */
+section {
+    height: 100vh; /* 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+#bienvenida{
+    display: flex;
+    align-items: first center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(
+        0deg,rgba(251, 0, 255, 0.153),rgba(142, 114, 255, 0.461)), url("imagenes/mudanza3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 50% ;
+}
+
+button{
+    cursor: pointer;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(134, 10, 222, 0.479);
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.784);
+    color: azure;
+    background-color: rgba(197, 22, 241, 0.613);
+}
+
+button:hover{
+    background-color: rgba(255, 0, 230, 0.635);
+}
+
+/* -----------------------------------------Página de INICIO------FIN------------------------------- */
+
+.seccion {
+    display: flex;  /* Las imagenes principales Horizontales */
+    padding: 10px;
+}
+
+/* Estilos para la clase "opcion" Las secciones principales del hogar */
+.opcion {
+    width: 100px;  /* Ancho del recuadro */
+    height: 160px; /* Altura del recuadro */
+    margin: 50px;  /* Margen entre opciones, ajusta según sea necesario */
+    border-radius: 5px;
+    border: 0.1px solid #0c1410;  /* Borde para resaltar la opción */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer;  /* Cambiar el cursor al pasar sobre la opción */
+    box-sizing: border-box;  /* Incluir el borde en el tamaño total */
+    position: relative; /* Posición relativa para alinear el contenido interno */
+    overflow: hidden; /* Oculta el contenido que se desborda del recuadro */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Estilos para la imagen dentro de la clase "opcion" Las secciones principales del hogar  */
+.opcion img {
+    width: 80%;  /* La imagen ocupa el 100% del ancho del recuadro */
+    height: 80%; /* La imagen ocupa el 100% de la altura del recuadro */
+    object-fit: contain; /* Ajusta la imagen para que quepa completamente dentro del contenedor sin recortarla */
+    position: absolute; /* Posición absoluta para posicionar la imagen dentro del recuadro */
+    top: 70%; /* Alinea la parte superior de la imagen al 50% del recuadro */
+    left: 50%; /* Alinea la parte izquierda de la imagen al 50% del recuadro */
+    transform: translate(-50%, -50%); /* Centra la imagen utilizando transformaciones */
+    opacity: 0.95; /* Ajusta el nivel de opacidad según tus preferencias */
+    transition: opacity 0.3s ease; /* Agregamos una transición suave */
+}
+
+/* Estilo especifico para la sección "Cocina" */
+.imagen-cocina, .imagen-oficina, .imagen-patio  {
+    width: 65px !important; /* ajusta según tus necesidades */
+    height: auto; /* Esto mantiene la proporción original de la imagen */
+}
+
+/* Estilos para el texto dentro de la clase "opcion" */
+.opcion h2 {
+    color: #3f525b;
+    font-size: 16px; /* Tamaño del texto */
+    margin: 0; /* Elimina el margen predeterminado del encabezado */
+    position: absolute; /* Posición absoluta para posicionar el texto dentro del recuadro */
+    top: 10px; /* Alinea la parte superior del texto a 10px desde la parte superior del recuadro */
+    left: 50%; /* Alinea el centro del texto al 50% del recuadro */
+    transform: translateX(-50%); /* Centra el texto horizontalmente utilizando transformaciones */
+    opacity: 0.9; /* Opacidad del texto antes de ser seleccionado */
+}
+
+/* Estilos adicionales cuando la opción está seleccionada y el texto tiene opacidad completa */
+.opcion.seleccionado h2 {
+    opacity: 1; /* Opacidad completa cuando está seleccionado */
+    color: #ffffff;
+}
+
+/* Estilos para la opción principal seleccionada */
+.opcion.seleccionado {
+    background-color: #42d8e5;
+    border-color: #0097bd;
+    box-shadow: 5px 5px 30px rgba(148, 51, 252, 0.257);
+}
+
+/*Estilos para el .PNG de las opciones principales cuando está seleccionado */
+.opcion.seleccionado img {
+    opacity: 1;
+    filter: brightness(0.9) saturate(150%) hue-rotate(270deg);
+}
+
+/*Estilos cuado se pasa el mouse sobre una de las opciones principales*/
+.opcion:hover {
+    border-color: #0097bd;
+    box-shadow: 5px 5px 30px rgba(148, 51, 252, 0.257);
+    transform: scale(1.2); /* Efecto de escala al pasar el ratón sobre la imagen */
+
+}
+
+/* --------///-------/----------Estilos de Imagenes desplegadas: INICIO-------/----------///---------------- */
+
+#eligeElementos{
+    position: relative;
+    margin-left:  150px; /* Puedes ajustar el valor del margen según tus necesidades */
+    margin-right:  150px; /* Puedes ajustar el valor del margen según tus necesidades */
+}
+
+.imagen-container {
+    cursor: pointer;
+}
+
+/*Estilos de las imagenes desplegadas de las principales IMPORTATE */
+.contenedor-objeto img {
+    width: 80%;  /* La imagen ocupa el 100% del ancho del recuadro */
+    height: 80%; /* La imagen ocupa el 100% de la altura del recuadro */
+    object-fit: contain; /* Ajusta la imagen para que quepa completamente dentro del contenedor sin recortarla */
+    position: absolute; /* Posición absoluta para posicionar la imagen dentro del recuadro */
+    top: 75%; /* Alinea la parte superior de la imagen al 50% del recuadro */
+    left: 50%; /* Alinea la parte izquierda de la imagen al 50% del recuadro */
+    transform: translate(-50%, -50%); /* Centra la imagen utilizando transformaciones */
+    transition: transform 0.5s ease-in-out;
+
+}
+
+/*Posicionamiento de imagenes desplegadas y contadores*/
+.contenedor-objeto { 
+    background-color: rgba(255, 255, 255, 0.198); /* Fondo con transparencia (ajusta el último valor según sea necesario) */
+    position: relative;
+    display: inline-flex;  /* Las imagenes principales Horizontales */
+    width: 45px;  /* Ancho del recuadro */
+    height: 100px; /* Altura del recuadro */
+    margin: 20px;  /* Margen entre opciones, ajusta según sea necesario */
+    border-radius: 5px;
+    border: 0.1px solid #b7b8d3;  /* Borde para resaltar la opción */
+    padding: 8px; /* Espaciado interno */
+    cursor: pointer;  /* Cambiar el cursor al pasar sobre la opción */
+    position: relative; /* Posición relativa para alinear el contenido interno */
+    overflow: hidden; /* Oculta el contenido que se desborda del recuadro */
+    transition: background-color 0.8s; /* Agrega una transición para suavizar el cambio de color */
+    transition: transform 0.5s ease-in-out; /* tiempo que toma en volver a posición inicial */
+}
+
+.imagen-container::before {
+
+    content: ''; /* Pseudo-elemento para la capa de fondo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Color de fondo inicial */
+    transition: background-color 0.8s ease; /* Transición de color de fondo */
+}
+
+
+/* Estilo cuando el checkbox está marcado */
+input[type="checkbox"]:checked + .imagen-container::before {
+    background-color: #42d8e5; /* Color de fondo cuando está seleccionado */
+    z-index: -1; /* Asegura que esté sobre otros elementos */
+}
+
+/* Estilo del checkbox */
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0; /* Hacer el checkbox invisible */
+}
+
+/* Selecciona el contenedor-objeto y aplica estilos cuando el mouse está sobre él */
+.contenedor-objeto:hover {
+    border: 0.1px solid #de59ff52; /* Cambia el borde al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transform: scale(1.4); /* Aplica un efecto de escala al pasar el mouse */
+    transition: transform 0.3s; /* Agrega una transición suave */
+    background-color: #edbded91; /* Cambia el color de fondo del contador al pasar el mouse */
+
+}
+
+/* --------///-------/----------Estilos de Imagenes desplegadas: FIN-------/----------///---------------- */
+
+.contenedor-objeto .contador {
+    position: absolute;
+    left: 16%; /* Alinea la parte izquierda de la imagen al 50% del recuadro */
+    bottom: 89px;
+    display: flex;
+    flex-direction: column;
+    width: 40px; /* Ajusta el ancho del contador según tus necesidades */
+    margin-top: 1px;
+    z-index: 1; /* Añadir esta línea para que el contador esté por encima */
+    font-size: 5px; /* Ajusta el tamaño del texto del contador según tus necesidades */
+}
+
+/* Estilo del contador */
+.contenedor-objeto .contador {
+    border-radius: 1px;
+    border: 0.1px solid #008cff80;
+}
+
+/* Estilo del número dentro del contador */
+.contenedor-objeto .contador input {
+    background-color: #1a9ed779; /* Cambia este valor al color que desees para el fondo del número */
+    color: #fff; /* Cambia este valor al color que desees para el texto del número */
+    border: none; /* Elimina el borde del número */
+    border-radius: 1px; /* Añade esquinas redondeadas al número */
+    padding: 4px; /* Ajusta el espaciado dentro del número */
+    font-size: 10px; /* Ajusta el tamaño del texto del contador según tus necesidades */
+}
+
+/* Estilo del contador cuando el mouse está sobre él */
+.contenedor-objeto:hover .contador {
+    background-color: #2980b9; /* Cambia este valor al color que desees cuando el mouse está sobre el contador */
+}
+
+#resultado { 
+    margin-left: 100px; 
+    margin-top: 5px;
+    font-size: 58px; /* Ajusta el tamaño del texto según tus preferencias */
+    background-color: #2B3658; /* Cambia el color de fondo según tus preferencias */
+    padding: 40px; /* Añade relleno para darle espacio al contenido */
+    color: #ffffff; /* Cambia el color del texto para que sea legible en el fondo */
+}
+
+/* Estilo del resumen */
+.resumen{
+    margin-top: 300px;
+    background-color: #2B3658;
+}
+
+
+/* -------------------------texto dentro de recuadros------------------------------------------------ */
+  
+.texto-desvaneciente {
+    display: none;
+    position:absolute;
+    top: 41%; /* Ajusta según tus necesidades */
+    left: 50%; /* Ajusta según tus necesidades */
+    transform: translate(-50%, -50%);
+    background-color: #0051ff00;
+    padding: 2px;
+    z-index: -1; /* Asegura que esté sobre otros elementos */
+    font-size: 12px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Cambia la fuente según tus preferencias */
+    font-weight: bold; /* Puedes ajustar la negrita según tus preferencias */
+    color: #ffffff; /* Cambia el color del texto según tus preferencias */
+    text-align: center; /* Ajusta la alineación del texto según tus necesidades */
+}
+
+/* -----------------------------------------OK----------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+

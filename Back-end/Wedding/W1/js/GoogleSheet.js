@@ -7,7 +7,7 @@ form.addEventListener('submit', e => {
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
   .then(response => {
     if (response.ok) {
-      window.location.href = 'https://dipierre-paginasweb.github.io/Back-end/Wedding/W1/Succesfull#success.html'; // Cambia 'tu_pagina_de_destino.html' por la URL de la página a la que deseas redirigir.
+      window.location.href = 'https://dipierre-paginasweb.github.io/Back-end/Wedding/W1/Succesfull.html'; // Cambia 'tu_pagina_de_destino.html' por la URL de la página a la que deseas redirigir.
     } else {
       alert("Hubo un error al enviar el formulario.");
     }

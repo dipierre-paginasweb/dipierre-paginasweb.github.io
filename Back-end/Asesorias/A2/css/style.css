@@ -261,6 +261,10 @@ a:focus {
   margin-bottom: 25px;
 }
 
+.slider_detail-box p{
+  font-size: 13px;
+}
+
 .slider_detail-box .btn-box a {
   display: inline-block;
   padding: 12px 40px;
@@ -372,6 +376,10 @@ a:focus {
 
 .service_section .service_container .service_box .detail-box h4 {
   font-weight: bold;
+}
+
+.service_section .service_container .service_box .detail-box p {
+  font-size: 9px;
 }
 
 .service_section .qo {
@@ -617,10 +625,17 @@ a:focus {
 .info_section {
   position: relative;
   font-family: "Poppins", sans-serif;
+  margin-top: -80px;
+  align-items: center;
 }
 
 .info_section img {
   width: 20%;
+}
+
+.info_section .pie-pag img {
+  margin-left: 100px;
+  margin-bottom: 20px;
 }
 
 .info_section ul {
@@ -639,9 +654,9 @@ a:focus {
 
 .info_section h5 {
   margin-bottom: 12px;
-  font-size: 22px;
+  font-size: 15px;
   color: #fff;
-  padding: 1px 3px;
+  padding: 1px 50px;
   border-bottom: 2px solid #f7851e;
 }
 
@@ -652,6 +667,7 @@ a:focus {
 .info_section .social-box img {
   width: 35px;
   margin-right: 5px;
+  align-self: center;
 }
 
 .form_container form {

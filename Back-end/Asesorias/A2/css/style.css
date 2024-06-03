@@ -262,7 +262,7 @@ a:focus {
 }
 
 .slider_detail-box p{
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .slider_detail-box .btn-box a {
@@ -379,7 +379,7 @@ a:focus {
 }
 
 .service_section .service_container .service_box .detail-box p {
-  font-size: 9px;
+  font-size: 15px;
 }
 
 .service_section .qo {
@@ -636,6 +636,7 @@ a:focus {
 .info_section .pie-pag img {
   margin-left: 100px;
   margin-bottom: 20px;
+  margin-top: -70px;
 }
 
 .info_section ul {

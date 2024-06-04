@@ -39,7 +39,7 @@ body {
 
 .custom_heading-container h2 {
   font-weight: bold;
-  border-bottom: 1px solid #feb543;
+  border-bottom: 1px solid #f7851e;
   padding-bottom: 5px;
 }
 
@@ -47,7 +47,7 @@ body {
 .hero_area {
   height: 94vh;
   background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
-  background: #004A87
+  background: #3026b5
 }
 
 .hero_area::before {
@@ -112,6 +112,7 @@ a:focus {
           box-shadow: none;
 }
 
+
 .navbar-brand,
 .navbar-brand:hover {
   text-transform: uppercase;
@@ -140,9 +141,8 @@ a:focus {
           align-items: center;
 }
 
-.navbar-brand span {
-  font-size: 20px;
-  font-weight: 700;
+.navbar-brand img {
+  width: 40%;
   color: #f9fcfb;
   margin-top: 5px;
   text-transform: uppercase;
@@ -221,7 +221,7 @@ a:focus {
 
 .slider_section .carousel_btn-container .carousel-control-prev:hover,
 .slider_section .carousel_btn-container .carousel-control-next:hover {
-  background-color: #feb543;
+  background-color: #f7851e;
 }
 
 .slider_section .carousel_btn-container .carousel-control-prev {
@@ -261,10 +261,14 @@ a:focus {
   margin-bottom: 25px;
 }
 
+.slider_detail-box p{
+  font-size: 14px;
+}
+
 .slider_detail-box .btn-box a {
   display: inline-block;
   padding: 12px 40px;
-  background-color: #feb543;
+  background-color: #f7851e;
   color: #f9fcfb;
   border-radius: 25px;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
@@ -309,7 +313,7 @@ a:focus {
 .welcome_section .detail-box a {
   display: inline-block;
   padding: 12px 40px;
-  background-color: #feb543;
+  background-color: #f7851e;
   color: #f9fcfb;
   border-radius: 25px;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
@@ -328,7 +332,7 @@ a:focus {
 .service_section {
   text-align: center;
   color: #f9fcfb;
-  background-image: url(../images/service-bg.png);
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1920.000000pt" height="1407.000000pt" viewBox="0 0 1920.000000 1407.000000" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%233026b5;stop-opacity:1" /><stop offset="100%25" style="stop-color:%23004A87;stop-opacity:1" /></linearGradient></defs><g transform="translate(0.000000,1407.000000) scale(0.100000,-0.100000)" fill="url(%23grad1)" stroke="none"><path d="M0 8256 l0 -5516 92 -46 c280 -141 498 -187 953 -204 149 -5 317 -15 374 -21 249 -25 387 -111 471 -292 75 -163 94 -310 87 -654 -3 -137 -13 -354 -22 -483 -22 -315 -17 -672 12 -777 55 -197 147 -259 383 -257 144 2 274 22 775 119 1330 258 2263 348 3580 348 942 0 1663 -40 2810 -158 1448 -149 2707 -165 3745 -49 748 83 1387 223 2079 454 302 101 484 169 1166 440 702 279 872 343 1210 456 431 144 817 248 1245 334 l235 47 0 5804 0 5804 -125 17 c-383 52 -805 84 -1280 98 -1326 36 -2775 -138 -4284 -516 -584 -146 -967 -261 -1881 -564 -396 -131 -850 -279 -1010 -329 -2300 -717 -3736 -956 -4475 -744 -47 13 -132 47 -189 74 -91 44 -116 63 -196 142 -75 75 -99 107 -133 177 -79 162 -102 307 -102 635 0 244 -12 418 -36 509 -65 251 -254 350 -625 325 -144 -10 -255 -29 -489 -84 -525 -124 -867 -166 -1365 -167 -576 -1 -1075 66 -1760 236 -244 60 -880 243 -1227 352 -17 5 -18 -262 -18 -5510z"/></g></svg>');
   background-size: 100% 100%;
   padding-top: 275px;
   padding-bottom: 125px;
@@ -374,10 +378,18 @@ a:focus {
   font-weight: bold;
 }
 
+.service_section .service_container .service_box .detail-box p {
+  font-size: 15px;
+}
+
+.service_section .qo {
+  margin-top: -50px;
+}
+
 .service_section a {
   display: inline-block;
   padding: 12px 40px;
-  background-color: #feb543;
+  background-color: #f7851e;
   color: #f9fcfb;
   border-radius: 25px;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
@@ -417,7 +429,7 @@ a:focus {
 .problem_section .detail-box a {
   display: inline-block;
   padding: 12px 40px;
-  background-color: #feb543;
+  background-color: #f7851e;
   color: #f9fcfb;
   border-radius: 25px;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
@@ -436,7 +448,7 @@ a:focus {
 .why_section {
   color: #f9fcfb;
   background: -webkit-gradient(linear, left top, right top, from(#1b3374), to(#8f4fe8));
-  background: linear-gradient(to right, #004A87, #ffc200);
+  background: linear-gradient(to right, #f7851e, #ffc200);
 }
 
 .why_section .custom_heading-container h2 {
@@ -491,7 +503,7 @@ a:focus {
 
 .client_section .carousel-control-prev:hover,
 .client_section .carousel-control-next:hover {
-  background-color: #feb543;
+  background-color: #f7851e;
 }
 
 .client_section .carousel-control-prev {
@@ -581,7 +593,7 @@ a:focus {
 .contact_section button {
   display: inline-block;
   padding: 12px 40px;
-  background-color: #a053f9;
+  background-color: #f7851e;
   color: #f9fcfb;
   border-radius: 5px;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
@@ -604,26 +616,27 @@ a:focus {
 
 /* info section */
 .footer_bg {
-  background-image: url(../images/footer-bg.png);
+  background-image: url(../images/footer-bg.svg);
   background-size: cover;
-  padding-top: 280px;
+  padding-top: 180px;
   margin-top: -125px;
 }
 
 .info_section {
   position: relative;
   font-family: "Poppins", sans-serif;
-}
-
-.info_section h3 {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #f9fcfb;
-  margin-bottom: 35px;
+  margin-top: -80px;
+  align-items: center;
 }
 
 .info_section img {
-  width: 100%;
+  width: 20%;
+}
+
+.info_section .pie-pag img {
+  margin-left: 100px;
+  margin-bottom: 20px;
+  margin-top: -70px;
 }
 
 .info_section ul {
@@ -642,19 +655,20 @@ a:focus {
 
 .info_section h5 {
   margin-bottom: 12px;
-  font-size: 22px;
+  font-size: 15px;
   color: #fff;
-  padding: 1px 3px;
-  border-bottom: 2px solid #feb543;
+  padding: 1px 50px;
+  border-bottom: 2px solid #f7851e;
 }
 
 .info_section .social-box {
-  margin: 25px 0;
+  margin: 25px 30px;
 }
 
 .info_section .social-box img {
   width: 35px;
   margin-right: 5px;
+  align-self: center;
 }
 
 .form_container form {
@@ -687,7 +701,7 @@ a:focus {
 .info_section .form_container button {
   display: inline-block;
   padding: 8px 50px;
-  background-color: #ffca56;
+  background-color: #f7851e;
   color: #f9fcfb;
   border-radius: 5px;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);

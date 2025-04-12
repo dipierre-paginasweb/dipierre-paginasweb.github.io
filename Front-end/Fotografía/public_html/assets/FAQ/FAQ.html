@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Fotografía Inmobiliaria</title>
+    <link href="/public_html/assets/css/FAQ.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white py-12">
+  <div class="max-w-xl mx-auto">
+    <h2 class="text-4xl font-extrabold mb-8 text-center">Preguntas Frecuentes</h2>
+    <div class="space-y-6">
+      
+      <!-- Generación dinámica de preguntas -->
+      <script>
+        const faqs = [
+          { question: "¿Qué incluye el servicio de fotografía inmobiliaria?", answer: "Incluye toma de fotografías en alta resolución, edición profesional y entrega en formatos listos para publicación en portales inmobiliarios." },
+          { question: "¿Cuánto tiempo tarda la sesión de fotos?", answer: "Depende del tamaño de la propiedad, pero en promedio toma entre 1 y 2 horas." },
+          { question: "¿Cuándo recibiré mis fotos editadas?", answer: "Las fotos editadas se entregan en un plazo de 24 a 48 horas." },
+          { question: "¿Ofrecen fotografía aérea con dron?", answer: "Sí, ofrecemos capturas aéreas para resaltar las características y ubicación de la propiedad." },
+          { question: "¿En qué formato se entregan las imágenes?", answer: "Las imágenes se entregan en formato JPG en alta resolución y optimizadas para web." },
+          { question: "¿Puedo solicitar retoques específicos en las fotos?", answer: "Sí, realizamos ajustes personalizados según las necesidades del cliente." },
+          { question: "¿Ofrecen servicios de video inmobiliario?", answer: "Sí, realizamos videos de recorridos inmobiliarios con edición profesional." },
+          { question: "¿Qué debo preparar antes de la sesión de fotos?", answer: "Es recomendable ordenar los espacios, retirar objetos personales y abrir cortinas para mejorar la iluminación." },
+          { question: "¿Puedo programar una sesión fuera del horario laboral?", answer: "Sí, ofrecemos horarios flexibles para adaptarnos a las necesidades de nuestros clientes." },
+          { question: "¿Ofrecen servicios para inmobiliarias y corredores de propiedades?", answer: "Sí, trabajamos con agencias inmobiliarias para proporcionar contenido visual de alta calidad." },
+          { question: "¿Puedo cancelar o reprogramar mi sesión?", answer: "Sí, pero se debe notificar con al menos 24 horas de anticipación." },
+          { question: "¿Fotografían interiores y exteriores?", answer: "Sí, realizamos capturas detalladas tanto de interiores como de exteriores." },
+          { question: "¿Cuál es la cobertura del servicio?", answer: "Trabajamos en diversas ciudades, contáctanos para más detalles sobre disponibilidad en tu zona." },
+          { question: "¿Tienen paquetes para múltiples propiedades?", answer: "Sí, ofrecemos paquetes especiales para agencias y clientes con varias propiedades." },
+          { question: "¿Cómo puedo reservar una sesión?", answer: "Puedes contactarnos a través de nuestro sitio web o redes sociales para agendar una cita." }
+        ];
+      
+        document.write('<div class="space-y-6">');
+        faqs.forEach((faq, index) => {
+          let id = index + 1;
+          document.write(`
+            <div class="bg-gray-800 shadow-md rounded-lg">
+              <button class="w-full flex items-center justify-between p-4 focus:outline-none" onclick="toggleItem(${id})" aria-expanded="false" aria-controls="content-${id}" id="faq-button-${id}">
+                <span class="text-lg font-semibold">${faq.question}</span>
+                <svg id="icon-plus-${id}" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
+                </svg>
+                <svg id="icon-minus-${id}" class="w-6 h-6 text-gray-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" />
+                </svg>
+              </button>
+              <div id="content-${id}" class="text-gray-300 overflow-hidden max-h-0 transition-all duration-500" role="region" aria-labelledby="faq-button-${id}">
+                <p class="p-4">${faq.answer}</p>
+              </div>
+            </div>
+          `);
+        });
+        document.write('</div>');
+      </script>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+  function toggleItem(id) {
+      const content = document.getElementById(`content-${id}`);
+      const iconPlus = document.getElementById(`icon-plus-${id}`);
+      const iconMinus = document.getElementById(`icon-minus-${id}`);
+      
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+      
+      iconPlus.classList.toggle('hidden');
+      iconMinus.classList.toggle('hidden');
+  }
+</script>
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="footercontainer">
+        <p>Copyright &copy; 2025. All rights reserved.</p>
+        <p>Designed with <span class="text-danger">&hearts;</span> Dipierre-PaginasWeb</p>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>

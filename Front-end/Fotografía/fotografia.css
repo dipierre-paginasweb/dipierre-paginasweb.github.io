@@ -1,0 +1,207 @@
+h1{font-size: 4.0em;}
+h2{font-size: 2.5em;}
+p{font-size: 0.5em;}
+
+
+/* Estilo para el fondo completo de la página */
+body {
+    background: linear-gradient(#282829, #1f1f20); /* Fondo degradado de dos colores */
+    font-family: 'roboto', sans-serif;
+}
+
+header{
+    height: 8vh;
+}
+
+/* Estilo para la imagen en el encabezado */
+header img {
+    width: 70px; /* Ancho deseado para la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+    margin-left: 65px;
+    margin-top: 40px;
+
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* Estilo para el texto que dice "Inicio" */
+.logo{
+    display:inline;
+    font-family: 'roboto', sans-serif;
+    font-size: 2.1em;
+    color:  #747d8c9f;
+    position: relative; /* Agrega posición relativae independiente de la imagen */
+    top: -20px; /* mueve vertical el texto */
+
+}
+
+
+
+/* Estilo para los textos del principio */
+.parrafo{
+    display: flex; /* Activa las carateristicas de "flex-direction","align-items" */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    .color-acento{ color: #16D298;}
+}
+
+/* Estilo para el textos h2 del principio */
+.parrafo h2 {
+    margin-top: 0px; /* quita margen */
+}
+
+.parrafo .color-acento {
+    color: #16D298;
+}
+
+/* estilo para los botones con link de etiqueta <a> */
+a.custom-button {
+    text-decoration: none;
+    cursor:pointer;
+    display: flex; /* estilo lineal entre letra-Imagen dentro de todos los botones */
+    align-items: center;/* Texto dentro de botones centrado en eje vertical */
+    justify-content: space-between;
+    width: 750px; /* todos los botones Ancho fijo */
+    border-radius: 20px; /* todos los botones radio de borde  */
+    background-color: #ffffff;
+    border: none;
+    color: #111110;
+    margin: 20px auto; /* todos los botones1 espacio entre si  */
+}
+
+/* estilo de todos los botones 1 */
+.custom-button{
+    cursor:pointer;
+    display: flex; /* estilo lineal entre letra-Imagen dentro de todos los botones */
+    align-items: center;/* Texto dentro de botones centrado en eje vertical */
+    justify-content: space-between;
+    width: 750px; /* todos los botones Ancho fijo */
+    border-radius: 20px; /* todos los botones radio de borde  */
+    background-color: #ffffff;
+    border: none;
+    color: #111110;
+    margin: 20px auto; /* todos los botones1 espacio entre si  */
+}
+
+/* estilo de textos dentro de botones */
+.custom-button span {
+    margin-left: 95px; /* separa la letra del margen izquiero del boton*/
+    font-family: 'roboto', sans-serif;  /* estilo de letra de los botones*/
+    font-size: 40px;
+
+}
+
+/* Estilo para la imagen dentro del botón */
+.custom-button img{
+    width: 150px; /* Tamaño de la imagen */
+    margin: 20px 90px; /* Espacio para separar la imagen de bordes de boton */
+}
+
+/* contenedor botones 1 */
+.botones-columna1 {
+    height: 66,5vh;
+    display: flex;
+    flex-direction: column; /* Botones1 en columna */
+    justify-content: flex-start; /* Botones1 al centro (en eje verical) */
+    align-items: center; /* Botones1 al centro (en eje Horizontal) (solo porque flex-direction = column) */
+    margin-top: 5%; /* contenedor1 Margen Superior */
+
+}
+
+/* contenedor botones 2 */
+.botones-columna2 {
+    height: 66,5vh;
+    display: flex;
+    flex-direction: column; /* Botones1 en columna */
+    justify-content: flex-start; /* Botones1 al centro (en eje verical) */
+    align-items: center; /* Botones1 al centro (en eje Horizontal) (solo porque flex-direction = column) */
+    margin-top: 0,7%; /* contenedor1 Margen Superior */
+}
+
+
+
+/* botones funcionando*/
+a.custom-button:hover{
+    background-color: #16D298;
+    color: #ffffff;
+}
+
+/* ----INICIO BOTONES PROXIMAMENTE--------------------------- */
+
+/* botones "proximamente"*/
+button:hover{
+    background-color: #2d3a36;
+    color: #16d29700;
+    transition: background-color 0.1s, color 0.1s;
+    border: 1px solid #16D298;
+}
+
+button:hover img {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.2s; /* Agregamos una transición para suavizar el cambio de opacidad */
+}
+
+button:hover img {
+    opacity: 0.06; /* Cambiar la opacidad de la imagen cuando se pasa el mouse */
+}
+
+button::before {
+    font-family: 'roboto', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 50px; /* Tamaño del texto "Próximamente" */
+    color: #16D298; /* Color del texto "Próximamente" */
+}
+
+button:hover::before {
+    content: "Próximamente"; /* Borra el contenido original del botón en hover */
+}
+
+
+/* ----FIN BOTONES PROXIMAMENTE--------------------------- */
+
+
+/* ------------------------INICIO Estilos de nimación--------------------------- */
+/* Estilo para la animación */
+.custom-button {
+    opacity: 0; /* Inicialmente, los botones están ocultos */
+    transform: translateY(20px); /* Desplazar los botones hacia abajo */
+
+    animation: fade-in 1s ease-in-out forwards, slide-up 1s ease-in-out forwards; /* Aplicar dos animaciones: aparecer y desplazar */
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; /* Al final de la animación, los botones estarán completamente visibles */
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(600px);
+    }
+    100% {
+        transform: translateY(0); /* Al final de la animación, los botones estarán en su posición original */
+    }
+}
+/* ------------------------FIN Estilos de nimación--------------------------- */
+
+
+/* Estilo para el fondo de la barra de estado en dispositivos móviles */
+@media screen and (min-width: 576px) {
+    body {
+        background-color: #282829; /* Reemplaza "tu-color-aqui" con el color deseado */
+    }
+}

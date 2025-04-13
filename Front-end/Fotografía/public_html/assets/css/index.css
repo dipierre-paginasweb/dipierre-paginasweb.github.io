@@ -11940,7 +11940,7 @@ textarea.form-control {
     width: 100%;
     margin-top: 30px;
     position: relative;
-    background-image: url('/public_html/assets/imgs/servicios/servicios1.jpg');
+    background-image: url('servicios1.jpg');
     background-size: contain;
     background-position:left;
     background-attachment: fixed;
@@ -11992,7 +11992,7 @@ textarea.form-control {
 
 .parallax-section {
   position: relative;
-  background-image: url('/public_html/assets/imgs/parallax/parallax1.jpg');
+  background-image: url('parallax1.jpg');
   background-size: 105%;
   background-position: center ;
   background-attachment: fixed;

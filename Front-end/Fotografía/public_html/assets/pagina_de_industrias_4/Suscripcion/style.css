@@ -1,0 +1,140 @@
+/* 
+
+#16D298 verde En uso
+#1FDF64 verde 2 (spotify)
+#282829 negro de fondo
+
+*/
+
+html {
+    text-decoration: none;
+}
+
+h1{font-size: 1.8em;}
+h2{font-size: 1em;}
+p{font-size: 0.5em;}
+
+header{
+    height: 15vh;
+}
+
+/* Estilo para la imagen en el encabezado */
+header img {
+    width: 30px; /* Ancho deseado para la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-right: 1px; /* Espacio entre la imagen y el texto */
+    margin-left: 28px;
+    margin-top: 20px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* Estilo para el texto que dice "Inicio" */
+.logo{
+    display:inline;
+    font-family: 'roboto', sans-serif;
+    font-size: 1.05em;
+    color:  #747d8c9f;
+    position: relative; /* Agrega posición relativae independiente de la imagen */
+    top: -10px; /* mueve vertical el texto */
+}
+
+
+/* Estilo para los textos del principio */
+.parrafo{
+	margin-top: 100px;
+    display: flex; /* Activa las carateristicas de "flex-direction","align-items" */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #837f7f;
+    .color-acento{color: #16D298;}
+}
+
+/* Estilo para el textos h2 del principio */
+.parrafo h2 {
+    margin-top: 20px; /* quita margen */
+	width: 80%;
+	text-align: center;
+}
+
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 110%;
+	/*Image only BG fallback*/
+	
+	/*background = gradient + image pattern combo*/
+	background: linear-gradient(#282829, #282829); /* Fondo degradado de dos colores */
+}
+
+body {
+    font-family: 'roboto', sans-serif;
+}
+
+
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh; /* Para centrar verticalmente en la pantalla */
+}
+
+.centered-button {
+    background-color: #16D298;
+    color: #ffffff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.centered-button:hover {
+    background-color: #16D298;
+}
+
+
+
+
+/*-----------------------------INICIO--------responsive------------------------------------------------------*/
+
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 600px) {
+    /* Ajusta el tamaño del formulario y sus elementos aquí */
+    #msform {
+
+        width: 100%;
+        margin: 50px auto;
+
+    }
+    
+    /* Ajusta otros estilos según sea necesario */
+    /* Por ejemplo, puedes reducir el tamaño del texto o los márgenes */
+    .fs-title {
+		font-family: 'roboto', sans-serif;
+        font-size: 16px;
+    }
+}
+
+/*-----------------------------FIN--------responsive------------------------------------------------------*/
+
+/* 
+---------------------------------------------
+footer
+--------------------------------------------- 
+*/
+
+footer {
+	background-image: linear-gradient(180deg, #282829 0%, #16D298 1000%);
+	margin-top: 600px;
+	padding-top: 30px;
+}
+  
+

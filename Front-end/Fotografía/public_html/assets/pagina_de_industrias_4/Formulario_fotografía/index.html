@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Dipierre - Industrias</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+          <img src="Images/eclipse.png" alt="Imagen de Inicio">
+          <a href="/index.html">
+            <h1 class="logo">Inicio</h1>
+        </a>
+        </div>
+    </header>
+
+    <div class='parrafo'>
+        <h1><span class="color-acento"> ¡Comencemos! </span></h1> <h2>Cuéntanos un poco más sobre proyeto</h2>
+    </div>
+
+    <div>
+        <form id="msform" method="post" action="" name="contact-form">
+            <!-- progressbar -->
+            <ul id="progressbar">
+              <li class="active">General</li>
+              <li>Estilo</li>
+              <li>Contacto</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+              <h2 class="fs-title">Información general</h2>
+              <h3 class="fs-subtitle">Cuéntanos sobre tu proyecto</h3>
+
+              <label for="pregunta">¿Cuál es tu nombre y el nombre de tu marca?</label>
+              <input type="text" name="1" placeholder="Ej: Juan Pérez | JP Fotografía Inmobiliaria" />
+              <label for="pregunta">¿En qué ciudad o región ofreces tus servicios?</label>
+              <input type="text" name="2" placeholder="Ej: Santiago, Chile | Ciudad de México, México" />
+              <label for="pregunta">¿Tienes logo o necesitas ayuda con el diseño de uno?</label>
+              <input type="text" name="3" placeholder="Ej: Tengo mi propio logo" />
+              <label for="pregunta">¿Cuáles son los principales servicios que ofreces?</label>
+              <input type="text" name="4" placeholder="Fotografía inmobiliaria, tours virtuales 360° Etc." />
+              <label for="pregunta">¿A qué tipo de clientes te diriges principalmente?</label>
+              <input type="text" name="5" placeholder="Inmobiliarias, corredores de propiedades, Etc." />
+
+              <input type="button" name="next" class="next action-button" value="Siguiente" />
+            </fieldset>
+
+            <fieldset>
+              <h2 class="fs-title">Identidad y estilo</h2>
+              <h3 class="fs-subtitle">Definamos tu marca</h3>
+
+              <label for="pregunta">¿Cómo describirías tu estilo de fotografía/vídeo?</label>
+              <input type="text" name="6" placeholder="Minimalista, moderno, artístico, documental, etc." />
+              <label for="pregunta">¿Tienes alguna paleta de colores para tu web?</label>
+              <input type="text" name="7" placeholder="Azul y blanco para transmitir confianza" />
+              <label for="pregunta">¿Tienes algún eslogan, frase o mensaje clave que quieras destacar en la web?</label>
+              <input type="text" name="8" placeholder="Ej: Capturando espacios con estilo" />
+              <label for="pregunta">¿Prefieres un diseño más minimalista y limpio o algo más llamativo y con efectos visuales?</label>
+              <input type="text" name="9" placeholder="Ej: Minimalista y simple" />
+              <label for="pregunta">¿Tienes un portafolio que deba destacarse en la página de inicio o prefieres mostrarlo en una sección separada?</label>
+              <input type="text" name="10" placeholder="Ej: Galería destacada en la página principal" />
+              <label for="pregunta">En el primer plano de tu web, ¿preferirías mostrar un video, una foto o una presentación con texto clásico?</label>
+              <input type="text" name="11" placeholder="Ej: Un video de fondo con tomas de propiedades" />
+
+              <input type="button" name="Previous" class="previous action-button" value="Anterior" />
+              <input type="button" name="next" class="next action-button" value="Siguiente" />
+            </fieldset>
+
+            <fieldset>
+                <h2 class="fs-title">Información clave</h2>
+                <h3 class="fs-subtitle">Que quieres destacar en tu Web</h3>
+
+                <label for="pregunta">¿Te gustaría incluir una biografía profesional con tu foto en la web?</label>
+                <input type="text" name="12" placeholder="Sí, quiero una sección con mi historia y una foto" />
+                <label for="pregunta">Tienes acreditaciones que deban destacarse en tu sitio web?</label>
+                <input type="text" name="13" placeholder="Sí, tengo certificaciones en fotografía inmobiliaria" />
+                <label for="pregunta">¿Ofreces promociones o paquetes de servicios que deban destacarse en tu sitio?</label>
+                <input type="text" name="14" placeholder="Ej: Pack de fotos + video con 10% de descuento" />
+                <label for="pregunta">¿Quieres una sección de preguntas frecuentes para aclarar dudas de tus clientes?</label>
+                <input type="text" name="15" placeholder="Ej: No, prefiero que me contacten directamente" />
+                <label for="pregunta">¿Tienes marcas o empresas con las que hayas trabajado y que te gustaría destacar en tu sitio web?</label>
+                <input type="text" name="16" placeholder="Sí, he trabajado con empresas como Inmobiliaria X" />
+
+                <input type="button" name="previous" class="previous action-button" value="Anterior" />
+                <input type="button" name="next" class="next action-button" value="Siguiente" />
+              </fieldset>
+
+            <fieldset>
+              <h2 class="fs-title">Datos de Contacto</h2>
+              <h3 class="fs-subtitle">Los medios a través tus clientes pueden contactarte</h3>
+              <label for="pregunta">Número de Teléfono</label>
+              <input type="text" name="17" placeholder="Ejemplo: +56 9 12345678" />
+              <label for="pregunta">¿Qué redes sociales usas para comunicarte con tus clientes?</label>
+              <input type="text" name="18" placeholder="Ej: Instagram @tufotografia" />
+              <label for="pregunta">Crearemos tu propio correo, ¿cómo te gustaría que se llame?</label>
+              <input type="text" name="19" placeholder="Ej: consutlas@tumarca.com" />
+              <label for="pregunta">Quieres indicar alguna dirección presencial?</label>
+              <input type="text" name="20" placeholder="Indica una Dirección, o no" />
+              <label for="pregunta">Hay algún otro detalle que debamos conocer para crear tu página web?</label>
+              <input type="text" name="21" placeholder="Otros detalles importantes" />
+
+              <input type="button" name="previous" class="previous action-button" value="Anterior" />
+              <input id="submit" type="submit" class="submit action-button" target="_top " value="Enviar">
+            </fieldset>
+          </form>
+    </div>
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+      <div class="container">
+              <div class="col-lg-12">
+                  
+              </div>
+          </div>
+      </div>
+  </footer>
+
+    <script src="GoogleSheet.js"></script>
+
+</body>
+</html>
